@@ -1,637 +1,727 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="Wwwhw&#39;s BLOG">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="http://example.com">
-    <!--SEO-->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<meta name="keywords" content="" />
+<link rel="stylesheet" href="/css/main.css">
 
 
-<meta name="description" content="" />
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Wwwhw&#39;s BLOG">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Wwwhw&#39;s BLOG">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Wang Haowen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
 
 
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
 
-<title>
-    
-    Wwwhw&#39;s BLOG
-</title>
-
-<link rel="alternate" href="/atom.xml" title="Wwwhw&#39;s BLOG" type="application/atom+xml">
-
-
-<link rel="icon" href="/favicon.ico">
-
-    
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
-
-    
-<div class="hide">
-    <script type="text/javascript">
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-</div>
+  <title>Wwwhw's BLOG</title>
+  
 
 
 
 
-    
 
-<meta name="generator" content="Hexo 5.3.0"></head>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-<body>
-    <header class="main-header"  style="background-image:url(
-    http://snippet.shenliyang.com/img/banner.jpg)"
-     >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='Wang Haowen'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-        </div>
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://example.com">
-                        Wwwhw&#39;s BLOG</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/"><i class="fa "></i>
-                                首页</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/前端/"><i class="fa "></i>
-                                前端</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/后端/"><i class="fa "></i>
-                                后端</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/工具/"><i class="fa "></i>
-                                工具</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/archives/"><i class="fa "></i>
-                                时间轴</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content ">
-                    
-<div class="carousel">
-    <a href="https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2" target="_blank">
-        <img src="/./img/head-img.jpg" alt="">
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Wwwhw's BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
     </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
 
 
-<article class="post">
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/01/04/boostnote/">
-                    </a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年01月04日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
             
-            {&#34;folders&#34;:[],&#34;version&#34;:&#34;1.0&#34;}
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/boostnote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
     </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
     </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2021/01/04/boostnote/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/boostnote/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/01/04/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
-                    hexo常用指令</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年01月04日
-                </time>
-            </div>
+              <time title="创建时间：2021-01-04 18:19:27" itemprop="dateCreated datePublished" datetime="2021-01-04T18:19:27+08:00">2021-01-04</time>
+            </span>
+
+          
+
         </div>
-        <p class="brief">
-            
-            hexo常用指令12345hexo new &amp;quot;postName&amp;quot;        &amp;#x2F;&amp;#x2F;新建文章hexo new page &amp;quot;pageName&amp;quot;        &amp;#x2F;&amp;#x...
-            
-        </p>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          {"folders":[],"version":"1.0"}
+      
     </div>
+
     
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
     
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
     </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
     </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2021/01/04/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/hexo%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">hexo常用指令</a>
+        </h2>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2021/01/04/hello-world/">
-                    Hello World</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2021年01月04日
-                </time>
-            </div>
+              <time title="创建时间：2021-01-04 16:50:02 / 修改时间：16:55:43" itemprop="dateCreated datePublished" datetime="2021-01-04T16:50:02+08:00">2021-01-04</time>
+            </span>
+
+          
+
         </div>
-        <p class="brief">
-            
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
-            
-        </p>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="hexo常用指令"><a href="#hexo常用指令" class="headerlink" title="hexo常用指令"></a>hexo常用指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot;        &#x2F;&#x2F;新建文章</span><br><span class="line">hexo new page &quot;pageName&quot;        &#x2F;&#x2F;新建页面</span><br><span class="line">hexo g          &#x2F;&#x2F;生成静态页面至public目录</span><br><span class="line">hexo server         &#x2F;&#x2F;开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</span><br><span class="line">hexo deploy         &#x2F;&#x2F;将.deploy目录部署到GitHub</span><br></pre></td></tr></table></figure>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">hexo d -g #生成部署</span><br><span class="line">hexo s -g #生成预览</span><br></pre></td></tr></table></figure>
+<h3 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: xxx    &#x2F;&#x2F;在此处添加你的标题。</span><br><span class="line">date: 2016-10-07 13:38:49   &#x2F;&#x2F;在此处输入编辑这篇文章的时间。</span><br><span class="line">tags: xxx    &#x2F;&#x2F;在此处输入这篇文章的标签。</span><br><span class="line">categories: xxx    &#x2F;&#x2F;在此处输入这篇文章的分类。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="文件编辑完成后发布"><a href="#文件编辑完成后发布" class="headerlink" title="文件编辑完成后发布"></a>文件编辑完成后发布</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+
     
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
     
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/04/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
     </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
     </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2021/01/04/hello-world/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/04/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/">
-                    解决microsoft应用商店开启代理后无法连接问题</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年05月16日
-                </time>
-            </div>
+              <time title="创建时间：2021-01-04 14:01:46" itemprop="dateCreated datePublished" datetime="2021-01-04T14:01:46+08:00">2021-01-04</time>
+            </span>
+
+          
+
         </div>
-        <p class="brief">
-            
-            问题Microsoft的全部应用在中国区的设置默认都是直连，所以当打开网络代理之后就无法使用应用商店。
-解决办法使用Fiddler，点击左上角winconfig，将需要更改的Microso应用打勾✔。
+      </header>
 
-            
-        </p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
     </div>
+
     
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
     
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
     </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            <a class="tag-none-link" href="/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" rel="tag">日常问题</a>
-            
-        </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
     </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">解决microsoft应用商店开启代理后无法连接问题</a>
+        </h2>
 
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/04/25/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
-                    Linux基本操作</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年04月25日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            Linux的目录
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            <a class="tag-none-link" href="/tags/Linux/" rel="tag">Linux</a>
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2020/04/25/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-media">
-        <a href="/2020/03/22/%E4%BD%BF%E7%94%A8Github-PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
-            <img class="img-ajax" src="/img/loading.gif" data-src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed3.png" alt="使用Github PicGo搭建图床">
-        </a>
-    </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2020/03/22/%E4%BD%BF%E7%94%A8Github-PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
-                    使用Github PicGo搭建图床</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2020年03月22日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            在github中搭建图床1.创建Repository一定要选择public,private的仓库，图片链接会带token，这个token又存在过期的问题。
-
-这里因为我已经有一个叫Figurebed的仓库所以”Repository n...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
-    </span>
-    
-    
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2020/03/22/%E4%BD%BF%E7%94%A8Github-PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-
-                </main>
-                
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        网站公告
-    </h3>
-    <div class="notification">
-        <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-    支持主题：<a target="_blank" rel="noopener" href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
-        
-        <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
-        
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/"><i class="fa" aria-hidden="true">2021年01月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/"><i class="fa" aria-hidden="true">2020年05月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/"><i class="fa" aria-hidden="true">2020年04月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/"><i class="fa" aria-hidden="true">2020年03月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" style="font-size: 10px;">日常问题</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
-</aside>
-
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-<a id="back-to-top" class="icon-btn hide">
-    <i class="fa fa-chevron-up"></i>
-</a>
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
-    
-</div>
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy;
-                    2017
-                    
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+              <time title="创建时间：2020-05-16 19:28:27" itemprop="dateCreated datePublished" datetime="2020-05-16T19:28:27+08:00">2020-05-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
                 </span>
-            </div>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-04 19:30:02" itemprop="dateModified" datetime="2021-01-04T19:30:02+08:00">2021-01-04</time>
+              </span>
+
+          
+
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Microsoft的全部应用在中国区的设置默认都是直连，所以当打开网络代理之后就无法使用应用商店。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>使用Fiddler，点击左上角winconfig，将需要更改的Microso应用打勾✔。</p>
+
+      
     </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/04/25/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/25/Linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Linux基本操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-25 12:30:42" itemprop="dateCreated datePublished" datetime="2020-04-25T12:30:42+08:00">2020-04-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-04 19:32:12" itemprop="dateModified" datetime="2021-01-04T19:32:12+08:00">2021-01-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Linux的目录"><a href="#Linux的目录" class="headerlink" title="Linux的目录"></a>Linux的目录</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/22/%E4%BD%BF%E7%94%A8Github-PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wang Haowen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wwwhw's BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/22/%E4%BD%BF%E7%94%A8Github-PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" class="post-title-link" itemprop="url">使用Github PicGo搭建图床</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-22 13:50:16" itemprop="dateCreated datePublished" datetime="2020-03-22T13:50:16+08:00">2020-03-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-05 14:09:38" itemprop="dateModified" datetime="2021-01-05T14:09:38+08:00">2021-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="在github中搭建图床"><a href="#在github中搭建图床" class="headerlink" title="在github中搭建图床"></a>在github中搭建图床</h2><h3 id="1-创建Repository"><a href="#1-创建Repository" class="headerlink" title="1.创建Repository"></a>1.创建Repository</h3><p>一定要选择public,private的仓库，图片链接会带token，这个token又存在过期的问题。</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed1.png" title="创建Repository"></p>
+<p>这里因为我已经有一个叫Figurebed的仓库所以”Repository name”不可用.<br> README.md可选可不选。</p>
+<h3 id="2-创建一个token"><a href="#2-创建一个token" class="headerlink" title="2.创建一个token"></a>2.创建一个token</h3><p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed2.png" title="创建token"></p>
+<p>选择最下方Developer setting</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed3.png" title="Developer setting"></p>
+<p>选择左下方Personal access tokens</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed4.png" title="Personal access tokens"></p>
+<p>右上角generate</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed5.png" title="generate"></p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed6.png" title="note and scopes"></p>
+<p>generate token</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed7.png" title="generate token"></p>
+<p>新生成的token一定要先复制到其他地方留作备用</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed8.png" title="token"></p>
+<h2 id="配置PicGo"><a href="#配置PicGo" class="headerlink" title="配置PicGo"></a>配置PicGo</h2><h3 id="1-下载PicGo"><a href="#1-下载PicGo" class="headerlink" title="1.下载PicGo"></a>1.下载PicGo</h3><p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">https://github.com/Molunerfinn/PicGo</a></p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed9.png" title="下载PicGo"></p>
+<h3 id="2-配置PicGo"><a href="#2-配置PicGo" class="headerlink" title="2.配置PicGo"></a>2.配置PicGo</h3><p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed10.png" title="配置PicGo"></p>
+<blockquote>
+<ul>
+<li>设定仓库名，按照“用户名/仓库名”的格式</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>分支名填写“master”</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>将之前留作备用的token粘贴在这里</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>img/存储路径，会在repository中创建一个img文件夹</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>设定自定义域名后，上传图片成功后，PicGo会自动生成该图片的访问链接 <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/%E7%94%A8%E6%88%B7%E5%90%8D/RepositoryName/%E5%88%86%E6%94%AF%E5%90%8D">https://raw.githubusercontent.com/用户名/RepositoryName/分支名</a></li>
+</ul>
+</blockquote>
+<h3 id="3-相关设置"><a href="#3-相关设置" class="headerlink" title="3.相关设置"></a>3.相关设置</h3><p>我习惯关闭自动更新，开启开机自启<br> 快捷键可自己设置，我是参考别人用的<code>ctrl+shift+c</code></p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/figurebed11.png" title="相关设置"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wang Haowen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
 </div>
 
 
-<script src="/js/search.js?rev=@@hash.js"></script>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang Haowen</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
 
 
 
 
 
-<script src="/js/app.js?rev=@@hash.js"></script>
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
 </html>
