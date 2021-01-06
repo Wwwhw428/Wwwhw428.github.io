@@ -23,6 +23,25 @@
     
     
     <entry>
+      <title>C语言例题6：查看亮灯情况</title>
+      <link href="2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%986%EF%BC%9A%E6%9F%A5%E7%9C%8B%E4%BA%AE%E7%81%AF%E6%83%85%E5%86%B5/"/>
+      <url>2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%986%EF%BC%9A%E6%9F%A5%E7%9C%8B%E4%BA%AE%E7%81%AF%E6%83%85%E5%86%B5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="查看亮灯情况"><a href="#查看亮灯情况" class="headerlink" title="查看亮灯情况"></a>查看亮灯情况</h1><h2 id="Descriopion"><a href="#Descriopion" class="headerlink" title="Descriopion"></a>Descriopion</h2><p>一条长廊里依次装有n(1 ≤ n ≤ 65535)盏电灯，从头到尾编号1、2、3、…n-1、n。</p><p>每盏电灯由一个拉线开关控制。开始，电灯全部关着。</p><p>有n个学生从长廊穿过。第一个学生把号码凡是1的倍数的电灯的开关拉一下；</p><p>接着第二个学生把号码凡是2的倍数的电灯的开关拉一下；</p><p>接着第三个学生把号码凡是3的倍数的电灯的开关拉一下；</p><p>如此继续下去，最后第n个学生把号码凡是n的倍数的电灯的开关拉一下。</p><p>n个学生按此规定走完后，长廊里电灯有几盏亮着。</p><p>注：电灯数和学生数一致。<br>Input</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入n个学生</span><br></pre></td></tr></table></figure><p>Output</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出当有n个学生的时候还有几盏灯亮着</span><br></pre></td></tr></table></figure><h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>碰过i号灯的人都是i的因子，当因子个数为奇数时灯亮。（完全平方数因子有重复，如：9 = 3 * 3）<br><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E7%82%B9%E7%81%AF.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E7%82%B9%E7%81%AF.png" srcset="data:image/png;base64,666" title="开灯"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int n &#x3D; 0;</span><br><span class="line">  scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">  int i &#x3D; 1;</span><br><span class="line">  while(i * i &lt;&#x3D; n)</span><br><span class="line">  &#123;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  printf(&quot;%d&quot;,i-1);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言例题5：厄拉多塞筛选法</title>
       <link href="2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%985%EF%BC%9A%E5%8E%84%E6%8B%89%E5%A4%9A%E5%A1%9E%E7%AD%9B%E9%80%89%E6%B3%95/"/>
       <url>2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%985%EF%BC%9A%E5%8E%84%E6%8B%89%E5%A4%9A%E5%A1%9E%E7%AD%9B%E9%80%89%E6%B3%95/</url>
