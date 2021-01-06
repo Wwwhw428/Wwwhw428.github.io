@@ -406,7 +406,7 @@
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
     <img no-lazy src="">
-    <p>请设置文章作者</p>
+    <p>Wang Haowen</p>
   </a>
 </div>
 
@@ -449,7 +449,75 @@
 
 
   
-  <h2 id="Linux的目录"><a href="#Linux的目录" class="headerlink" title="Linux的目录"></a>Linux的目录</h2>
+  <h1 id="Linux基本操作"><a href="#Linux基本操作" class="headerlink" title="Linux基本操作"></a>Linux基本操作</h1><h2 id="Linux的目录"><a href="#Linux的目录" class="headerlink" title="Linux的目录"></a>Linux的目录</h2><p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/Linux%E7%9A%84%E7%9B%AE%E5%BD%95.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/Linux%E7%9A%84%E7%9B%AE%E5%BD%95.png" srcset="data:image/png;base64,666" title="Linux的目录"></p>
+<p><code>/root</code>：根目录<br><code>/bin</code>：包含供每个人使用的可执行程序<br><code>/sbin</code>：包含仅供管理员使用的可执行程序<br><code>/lib</code>：包含库文件<br><code>/boot</code>：包括了内核镜像和其它相关内容<br><code>/dev</code>：包含着代表硬件设备的设备文件<br><code>/etc</code>：包含着整个系统的各种配置文件<br><code>/home</code>：包含各用户的主目录<br><code>/root</code>：是root的主目录<br><code>/mnt</code>：包含装载其它非标准文件系统的装载点<br><code>/proc</code>:是个虚拟目录，里面保存内核和进程的信息<br><code>/tmp</code>：是为程序和用户提供放置临时空间的目录<br><code>/usr</code>：包含UNIX系统的众多资源，较占空间<br><code>/var</code>：目录包含了一些文件大小比较特殊的文件，如日志文件，锁文件等，还包括各种用途的文件，如：邮件、计划、打印文件等<br><code>/lost+found</code>：存在于所有的文件系统中，保存文件碎片<br><code>/opt</code>：是由一些外部应用程序使用的目录</p>
+<h3 id="其它一些用户自己建的目录"><a href="#其它一些用户自己建的目录" class="headerlink" title="其它一些用户自己建的目录"></a>其它一些用户自己建的目录</h3><ul>
+<li>工作目录：用户在登录到Linux系统中之后，每时每刻都”处在”某个目录之中，此目录被称作工作目录或当前目录（Working Directory）。工作目录是可以随时改变的。工作目录用<code>.</code>表示，其父目录用<code>..</code>表示。</li>
+<li>主目录：是系统管理员增加用户时建立起来的（以后也可以改变），每个用户都有自己的主目录用于保存信息，不同用户的主目录一般互不相同。</li>
+<li>用户初始登录到系统中时，其主目录（Home Directory）就成为其工作目录，通常与用户的登录名相同。</li>
+<li>用户可以通过一个<code>~</code>字符来引用自己的主目录。例如命令：<code>$ cat ~/file1</code></li>
+</ul>
+<h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><h3 id="最常用的几个命令"><a href="#最常用的几个命令" class="headerlink" title="最常用的几个命令"></a>最常用的几个命令</h3><p>可用<code>pwd</code>命令查看用户的当前目录<br>可用<code>cd</code>命令来切换目录<br><code>.</code>表示当前目录<br><code>..</code>表示当前目录的上一级目录（父目录）<br><code>-</code>表示用<code>cd</code>命令切换目录前所在的目录<br><code>~</code>表示用户主目录的绝对路径名<br><code>--help</code>查看该操作的帮助信息<br><code>--version</code>显示版本信息并退出<br><code>clear</code>清除屏幕</p>
+<h3 id="修改口令"><a href="#修改口令" class="headerlink" title="修改口令"></a>修改口令</h3><p><code>passwd</code>对用户口令进行操作</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E4%BF%AE%E6%94%B9%E5%8F%A3%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E4%BF%AE%E6%94%B9%E5%8F%A3%E4%BB%A4.png" srcset="data:image/png;base64,666" title="修改口令"></p>
+<h3 id="who命令"><a href="#who命令" class="headerlink" title="who命令"></a>who命令</h3><p><code>who</code>显示当前已登录的用户信息<br><code>who am i</code>：等价于<code>who -m</code><br><code>whoami</code>：显示当前“操作用户”的用户名</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/who%E5%91%BD%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/who%E5%91%BD%E4%BB%A4.png" srcset="data:image/png;base64,666" title="who命令"></p>
+<h3 id="echo命令"><a href="#echo命令" class="headerlink" title="echo命令"></a>echo命令</h3><p>显示输出字符串<br>    用法：<code>/bin/echo [短选项]... [字符串]...</code><br>    或：`/bin/echo 长选项``</p>
+<p>​    <code>echo</code>将 STRING 回显到标准输出。</p>
+<p>​    <code>-n</code>不尾随换行符</p>
+<p>​    <code>-e</code>启用解释反斜杠的转义功能</p>
+<p>​    <code>-E</code>禁用解释反斜杠的转义功能(默认) </p>
+<p><strong>注意：</strong><code>echo</code><strong>的帮助信息需要输入</strong><code>/bin/echo --help</code><br><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/echo%E5%91%BD%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/echo%E5%91%BD%E4%BB%A4.png" srcset="data:image/png;base64,666"></p>
+<h3 id="date命令"><a href="#date命令" class="headerlink" title="date命令"></a>date命令</h3><p>显示或设置系统的日期和时间<br>    用法：<code>date [选项]... [+格式]</code><br>    或：<code>date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</code><br> <img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/date%E5%91%BD%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/date%E5%91%BD%E4%BB%A4.png" srcset="data:image/png;base64,666" title="date命令"></p>
+<h3 id="cal命令"><a href="#cal命令" class="headerlink" title="cal命令"></a>cal命令</h3><p><code>cal</code>显示日历</p>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/cal%E5%91%BD%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/cal%E5%91%BD%E4%BB%A4.png" srcset="data:image/png;base64,666" title="cal命令"></p>
+<h2 id="文件和目录操作相关命令"><a href="#文件和目录操作相关命令" class="headerlink" title="文件和目录操作相关命令"></a>文件和目录操作相关命令</h2><h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h3><p>连接文件并打印到标准输出设备上<br>    用法：<code>cat [选项]... [文件]...</code></p>
+<h3 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h3><p>用于显示内容超过一屏的文件<br>    用法：<code>more [选项] &lt;文件&gt;...</code><br>more 内部命令键:<br><code>Space</code>、<code>Enter</code>、<code>/</code>、<code>h</code>、 <code>b</code>、<code>q</code>。</p>
+<p><code>less</code>的作用与<code>more</code>十分相似，都可以用来浏览文字档案的内容，不同的是<code>less</code>允许使用者往回卷动。</p>
+<h3 id="Head-Tail命令"><a href="#Head-Tail命令" class="headerlink" title="Head/Tail命令"></a>Head/Tail命令</h3><p>用来显示开头或结尾某个数量的文字区块<br>    用法：<code>head [选项]... [文件]...</code><br>    用法：<code>tail [选项]... [文件]...</code></p>
+<h3 id="od命令"><a href="#od命令" class="headerlink" title="od命令"></a>od命令</h3><p>以指定格式显示文件，默认为八进制<br>    用法：<code>od [选项]... [文件]...</code><br>    或：<code>od [-abcdfilosx]... [文件] [[+]偏移量[.][b]]</code><br>    或：<code>od --traditional [选项]... [文件] [[+]偏移量[.][b] [+][标签][.][b]]</code></p>
+<h3 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h3><p>辨识文件类型<br>    用法：<code>file[选项]... [文件]...</code></p>
+<h3 id="touch命令"><a href="#touch命令" class="headerlink" title="touch命令"></a>touch命令</h3><p>改变档案的时间记录<br>    用法：<code>touch[选项]... [文件]...</code></p>
+<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p>查找文件里符合条件的字符串<br>    用法：<code>grep[选项]... [查找模式]... [文件]...</code><br>    其中<code>-n</code>选项可输出匹配行的行号，<code>-r</code>选项表示在目录中递归查找符合的文件名。</p>
+<h3 id="find命令"><a href="#find命令" class="headerlink" title="find命令"></a>find命令</h3><p>文件查找命令<br>    用法：<code>find[路径]... [选项]...</code><br>    其中<code>-name</code>选项用于通过文件名查找，<code>-size</code>选项用于通过文件大小查找等。</p>
+<h3 id="locate命令"><a href="#locate命令" class="headerlink" title="locate命令"></a>locate命令</h3><p>快速文件查找命令，该命令在运行时需要后台索引的数据库支撑，可以执行<code>sudo updatedb</code>来手动更新。<br>    用法：<code>Locate[选项]... [文件]...</code></p>
+<h3 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h3><p>对文件中的各行进行排序。默认以升序词典顺序排序文件的内容。每一列的字符，包括空格、数字和特殊字符都经一一比较。<br>    用法：<code>sort[选项]... [文件列表]...</code><br>    <code>-d</code>选项：只比较字母、数字和空格，其他忽略。</p>
+<h3 id="uniq命令"><a href="#uniq命令" class="headerlink" title="uniq命令"></a>uniq命令</h3><p>将相邻的重复行从输出文件中删除，只留下每条记录的唯一样本。可结合<code>sort</code>命令使用。<br>    用法：<code>uniq[选项]... [文件]...</code></p>
+<h3 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h3><p>统计指定文件中的行数、字数、字节数， 并将统计结果显示输出。<br>    用法：<code>wc[选项]... [文件]...</code></p>
+<h3 id="comm命令"><a href="#comm命令" class="headerlink" title="comm命令"></a>comm命令</h3><p>该命令是对两个已经排好序的文件进行比较。其中file1和file2是已排序的文件。<code>comm</code>读取这两个文件，然后生成三列输出。仅在 file1中出现的行；仅在file2中出现的行；在两个文件中都存在的行。其中<code>- 123</code>选项为选择哪列显示。<br>    用法：<code>comm [- 123 ] file1 file2</code></p>
+<h3 id="diff命令"><a href="#diff命令" class="headerlink" title="diff命令"></a>diff命令</h3><p>该命令的功能为逐行比较两个文本文件，列出其不同之处。<br>    用法：<code>diff[选项]... [文件1]... [文件名2]...</code></p>
+<h3 id="cp命令"><a href="#cp命令" class="headerlink" title="cp命令"></a>cp命令</h3><p>文件复制<br>    用法：<code>cp[选项]... [源文件名或目录]... [目标文件名或目录]...</code><br>    <code>-r</code>若给出的源文件是一目录文件，此时cp将递归复制该目录下所有的子目录和文件。此时目标文件必须为一个目录名。<br>    <code>-a</code>该选项通常在拷贝目录时使用。它保留链接、文件属性，并递归地拷贝目录。<br>    <code>-f</code>删除已经存在的目标文件而不提示。</p>
+<h3 id="rm命令"><a href="#rm命令" class="headerlink" title="rm命令"></a>rm命令</h3><p>删除文件命令<br>    用法：<code>rm[选项]... [文件列表]...</code><br>    <code>-f</code>忽略不存在的文件，从不给出提示。<br>    <code>-r</code>指示<code>rm</code>将参数中列出的全部目录和子目录均递归地删除。<br>    <code>-i</code>进行交互式删除。</p>
+<h3 id="mv命令"><a href="#mv命令" class="headerlink" title="mv命令"></a>mv命令</h3><p>移动文件命令<br>    用法：<code>mv[选项]... [源文件/目录名]... [目标文件/目录名]...</code><br>    <code>-f</code>覆盖前不询问<br>    <code>-i</code>覆盖前询问<br>    <code>-n</code>不覆盖已存在文件</p>
+<h3 id="ln命令"><a href="#ln命令" class="headerlink" title="ln命令"></a>ln命令</h3><p>文件链接命令，包括硬链接和软链接两种。其中硬链接使得链接数加1，不能链接目录，不能跨文件系统。<br>    用法：<code>ln[选项]... [源文件]... [目标文件]...</code></p>
+<h3 id="mkdir-rmdir命令"><a href="#mkdir-rmdir命令" class="headerlink" title="mkdir/rmdir命令"></a>mkdir/rmdir命令</h3><p>创建目录、删除空目录。<br>    用法：<code>mkdir/rmdir[选项]... [目录名]...</code><br>    <code>rmdir</code>的<code>-p</code>选项，表示当删除目录的父目录为空时，父目录也一并删除。</p>
+<h3 id="ls-命令"><a href="#ls-命令" class="headerlink" title="ls 命令"></a>ls 命令</h3><p>列出目录内容<br>    用法：<code>ls[选项]... [文件或目录]...</code><br>    <code>-a</code>显示所有文件，包括隐藏文件<br>    <code>-R</code>显示所有文件，包括子目录下的文件<br>    <code>-l</code>显示文件的详细信息<br>    <code>-d</code>显示目录的信息而不是目录所含的内容<br>    <code>-i</code>显示文件的<code>inode</code>数<br> <img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/ls%E5%91%BD%E4%BB%A4.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/ls%E5%91%BD%E4%BB%A4.png" srcset="data:image/png;base64,666" title="ls命令"></p>
+<h2 id="命令的输入和输出"><a href="#命令的输入和输出" class="headerlink" title="命令的输入和输出"></a>命令的输入和输出</h2><ul>
+<li><p>标准I/O文件</p>
+</li>
+<li><p>标准输入<code>(stdin) 0</code></p>
+</li>
+<li><p>标准输出<code>(stdout) 1</code></p>
+</li>
+<li><p>标准错误输出<code>(stderr) 2</code></p>
+</li>
+<li><p>输出重定向：<code>&gt; 1&gt; 2&gt; &amp;&gt;</code> （含1和2）</p>
+</li>
+<li><p>附加重定向：<code>&gt;&gt;</code></p>
+</li>
+<li><p>输入重定向：<code>&lt;</code>，<code>0&lt;</code></p>
+</li>
+<li><p>管道：上一个命令的<code>stdout</code>接到下一个命令的<code>stdin</code>;管道符号<code>|</code></p>
+</li>
+<li><p>过滤器：用来接收标准输入，经过一定的转化，再写到标准输出。所以，过滤器一般放在管道符中间。如：<code>ls | sort | more</code></p>
+</li>
+</ul>
+<h3 id="联机帮助命令"><a href="#联机帮助命令" class="headerlink" title="联机帮助命令"></a>联机帮助命令</h3><p><code>help</code>：显示bash shell内置命令的简单信息。使用<code>help</code>命令不带任何参数将显示bash shell所有内置的命令。<br>    用法：<code>help[命令]...</code><br><code>man</code>：显示对应命令系统的帮助手册。<br>    用法：<code>man[选项]... [章节数字]... [命令]...</code><br><code>whatis</code>:描述一个命令执行什么功能。等同于使用<code>man -f</code>命令<br>    用法：<code>whatis [命令]...</code><br><code>whereis</code>：从环境变量的路径中查找符合条件的文件。<br>    用法：<code>whereis[选项]... [文件]...</code></p>
+<h2 id="网络管理命令"><a href="#网络管理命令" class="headerlink" title="网络管理命令"></a>网络管理命令</h2><h3 id="ifconfig程序"><a href="#ifconfig程序" class="headerlink" title="ifconfig程序"></a>ifconfig程序</h3><p>设置，检查以及监控网络接口的配置值。<br>    用法：<code>ifconfig [interface_name] [ip_address] [up|down]</code></p>
+<h3 id="route路由"><a href="#route路由" class="headerlink" title="route路由"></a>route路由</h3><p>显示及配置网络路由</p>
+<h3 id="netstat-程序"><a href="#netstat-程序" class="headerlink" title="netstat 程序"></a>netstat 程序</h3><p>显示网络连接、路由表和网络接口信息，可以让用户得知目前都有哪些网络连接正在运作。<br>    用法：<code>netstat［选项］...</code><br>    <code>-a</code>所有连接<br>    <code>-r</code>路由表<br>    <code>-t</code>TCP协议（-u）</p>
+<h3 id="ping程序"><a href="#ping程序" class="headerlink" title="ping程序"></a>ping程序</h3><p>用于查看网络上的主机是否在工作，它向该主机发送ICMP ECHO_REQUEST包。当想从网络上的某台主机上下载文件，可是又不知道那台主机是否开着，就需要使用ping命令查看。<br>    用法：<code>ping［选项］ [主机名/IP地址]</code><br>    <code>-c</code>数目 在发送指定数目的包后停止。<br>    <code>-d</code>设定SO_DEBUG的选项。<br>    <code>-f</code>大量且快速地送网络封包给一台机器，看它的回应。<br>    <code>-I</code>秒数 设定间隔几秒送一个网络封包给一台机器，预设值是一秒送一次。</p>
+
   
   
     
@@ -483,10 +551,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-04T19:32:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T15:51:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月4日</p>
+    <p>更新于：2021年1月6日</p>
   </a>
 </div>
 
@@ -616,7 +684,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux的目录</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">Linux的目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E4%B8%80%E4%BA%9B%E7%94%A8%E6%88%B7%E8%87%AA%E5%B7%B1%E5%BB%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-text">其它一些用户自己建的目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E4%B8%AA%E5%91%BD%E4%BB%A4"><span class="toc-text">最常用的几个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%8F%A3%E4%BB%A4"><span class="toc-text">修改口令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#who%E5%91%BD%E4%BB%A4"><span class="toc-text">who命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#echo%E5%91%BD%E4%BB%A4"><span class="toc-text">echo命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#date%E5%91%BD%E4%BB%A4"><span class="toc-text">date命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cal%E5%91%BD%E4%BB%A4"><span class="toc-text">cal命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4"><span class="toc-text">文件和目录操作相关命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat%E5%91%BD%E4%BB%A4"><span class="toc-text">cat命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#more%E5%91%BD%E4%BB%A4"><span class="toc-text">more命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Head-Tail%E5%91%BD%E4%BB%A4"><span class="toc-text">Head&#x2F;Tail命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#od%E5%91%BD%E4%BB%A4"><span class="toc-text">od命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file%E5%91%BD%E4%BB%A4"><span class="toc-text">file命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#touch%E5%91%BD%E4%BB%A4"><span class="toc-text">touch命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grep%E5%91%BD%E4%BB%A4"><span class="toc-text">grep命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find%E5%91%BD%E4%BB%A4"><span class="toc-text">find命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#locate%E5%91%BD%E4%BB%A4"><span class="toc-text">locate命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort%E5%91%BD%E4%BB%A4"><span class="toc-text">sort命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniq%E5%91%BD%E4%BB%A4"><span class="toc-text">uniq命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wc%E5%91%BD%E4%BB%A4"><span class="toc-text">wc命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#comm%E5%91%BD%E4%BB%A4"><span class="toc-text">comm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#diff%E5%91%BD%E4%BB%A4"><span class="toc-text">diff命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp%E5%91%BD%E4%BB%A4"><span class="toc-text">cp命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm%E5%91%BD%E4%BB%A4"><span class="toc-text">rm命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv%E5%91%BD%E4%BB%A4"><span class="toc-text">mv命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ln%E5%91%BD%E4%BB%A4"><span class="toc-text">ln命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-rmdir%E5%91%BD%E4%BB%A4"><span class="toc-text">mkdir&#x2F;rmdir命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%91%BD%E4%BB%A4"><span class="toc-text">ls 命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-text">命令的输入和输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E6%9C%BA%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-text">联机帮助命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">网络管理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig%E7%A8%8B%E5%BA%8F"><span class="toc-text">ifconfig程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#route%E8%B7%AF%E7%94%B1"><span class="toc-text">route路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#netstat-%E7%A8%8B%E5%BA%8F"><span class="toc-text">netstat 程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping%E7%A8%8B%E5%BA%8F"><span class="toc-text">ping程序</span></a></li></ol></li></ol>
     </div>
   </section>
 
