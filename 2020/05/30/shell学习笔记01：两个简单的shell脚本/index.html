@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/5 - Wwwhw&#39;s BLOG</title>
+  <title>shell学习笔记01：两个简单的shell脚本 - Wwwhw&#39;s BLOG</title>
   
 
   
@@ -60,7 +58,7 @@
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +309,7 @@
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -387,73 +385,227 @@
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
-      
+    
+    
+      <h1 class="title">
+        shell学习笔记01：两个简单的shell脚本
+      </h1>
+      <div class='new-meta-box'>
         
           
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/">
-        shell学习笔记01：两个简单的shell脚本
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1.添加用户user1-10，但要求只有用户不存在的情况下才能添加。 2.切换工作目录至/var；统计/var目录下共有多个文件，并显示出来。
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Wang Haowen</p>
+  </a>
+</div>
 
-注意运行shell时如果提示权限不够时需先运行chmod 764 test.sh。
+          
+        
+          
+            
 
-1.添加用户user1-10123456789101112131415161718192021222324#!/bin/sh#添加用户user1-10,只有用户不...
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年5月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
-    
+      <div id="lc-pv" data-title="shell学习笔记01：两个简单的shell脚本" data-path="/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2021-05-30</time>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>1.添加用户user1-10，但要求只有用户不存在的情况下才能添加。<br> 2.切换工作目录至<code>/var</code>；统计<code>/var</code>目录下共有多个文件，并显示出来。</p>
+<ul>
+<li>注意运行shell时如果提示权限不够时需先运行<code>chmod 764 test.sh</code>。</li>
+</ul>
+<h2 id="1-添加用户user1-10"><a href="#1-添加用户user1-10" class="headerlink" title="1.添加用户user1-10"></a>1.添加用户user1-10</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户user1-10,只有用户不存在时才添加。</span></span><br><span class="line">psw=&quot;1&quot;</span><br><span class="line">for i in `seq 1 10` </span><br><span class="line">do</span><br><span class="line">	name=&quot;user&quot;$i&quot;&quot;;</span><br><span class="line">	sudo useradd $name;</span><br><span class="line"></span><br><span class="line"><span class="meta">	#</span><span class="bash">判断该用户是否存在。</span></span><br><span class="line">	if [ $? -eq 0 ];then</span><br><span class="line">		echo &quot;user $&#123;name&#125; is created successfully!&quot;</span><br><span class="line">	else</span><br><span class="line">		echo &quot;user $&#123;name&#125; is existed!&quot;</span><br><span class="line">		continue	</span><br><span class="line">	fi</span><br><span class="line"></span><br><span class="line"><span class="meta">	#</span><span class="bash">判断密码设置是否成功。</span></span><br><span class="line">	echo $password | sudo password --stdin $name;</span><br><span class="line">	if [$? -eq 0 ];then</span><br><span class="line">		echo &quot;$&#123;name&#125;&#x27;s password is set successfully&quot;</span><br><span class="line">	else</span><br><span class="line">		echo &quot;$&#123;name&#125;&#x27;s password is set failly!&quot;</span><br><span class="line">	fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>定义变量时等号不能加空格。</p>
+</li>
+<li><p><code>#!</code>是一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell。</p>
+</li>
+<li><p>拼接字符串，可以使用单引号或双引号拼接。</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=&quot;user&quot;</span><br><span class="line">user_name=&quot;&quot;$name&quot;1&quot;  #user_name=&quot;$&#123;name&#125;1&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="2-统计-var目录下共有多个文件"><a href="#2-统计-var目录下共有多个文件" class="headerlink" title="2.统计/var目录下共有多个文件"></a>2.统计/var目录下共有多个文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line"><span class="meta">#</span><span class="bash">切换工作目录至/ver;</span></span><br><span class="line"><span class="meta">#</span><span class="bash">依次向/var目录下的每个文件或子目录问好;</span></span><br><span class="line"><span class="meta">#</span><span class="bash">统计/var目录下共有多少个文件，并显示出来。</span></span><br><span class="line">i=0</span><br><span class="line">cd /var</span><br><span class="line">for FILE in /var/*</span><br><span class="line">do</span><br><span class="line">	i=`expr $i + 1`;</span><br><span class="line">done</span><br><span class="line">echo $i</span><br></pre></td></tr></table></figure>
+<p>“`”的作用是将”``”中间的语句当成命令执行</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/>http://example.com/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T18:06:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月6日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-  </section>
-  
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/&title=shell学习笔记01：两个简单的shell脚本 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
     
-  
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/&title=shell学习笔记01：两个简单的shell脚本 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/&title=shell学习笔记01：两个简单的shell脚本 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
 
 
-	
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/04/%E6%B5%8B%E8%AF%951%E9%94%99%E9%A2%98/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>测试1错题</p>
+          <p class='content'>1.计算2^0 + 2^1 + 2^2 + 2^3 + 2^4 + … + 2^n的结果1234567int main()&#123;    int n = 0;    scanf(&quot;...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/'>
+          <p class='title'>解决microsoft应用商店开启代理后无法连接问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>问题Microsoft的全部应用在中国区的设置默认都是直连，所以当打开网络代理之后就无法使用应用商店。
+解决办法使用Fiddler，点击左上角winconfig，将需要更改的Microso应用打...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -461,117 +613,42 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/头像.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Wwwhw's BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">日常问题</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7user1-10"><span class="toc-text">1.添加用户user1-10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BB%9F%E8%AE%A1-var%E7%9B%AE%E5%BD%95%E4%B8%8B%E5%85%B1%E6%9C%89%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="toc-text">2.统计&#x2F;var目录下共有多个文件</span></a></li></ol>
     </div>
   </section>
 
 
   
 
-  
-
 
 </aside>
+
 
    <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="shell学习笔记01：两个简单的shell脚本";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
  
