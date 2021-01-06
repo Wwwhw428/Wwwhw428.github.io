@@ -5,6 +5,10 @@
   <!-- SEO相关 -->
   
     
+      
+        <meta name="robots" content="noindex,follow">
+      
+    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,7 +23,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>C++学习笔记 - Wwwhw&#39;s BLOG</title>
+  <title>Wwwhw&#39;s BLOG</title>
   
 
   
@@ -309,7 +313,7 @@
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -385,221 +389,76 @@
           
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-
-
-  
-  <div class="article-meta" id="top">
+  <section class="post-list">
     
     
-    
-      <h1 class="title">
-        C++学习笔记
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Wang Haowen</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年1月6日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
       
-      <div id="lc-pv" data-title="C++学习笔记" data-path="/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-          
         
-      </div>
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/03/21/%E8%AE%BE%E7%BD%AEhexo%E9%A6%96%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E5%8D%9A%E6%96%87%E6%91%98%E8%A6%81/">
+        设置hexo首页只显示博文摘要
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        修改配置我使用的Volantis主题默认是开启只显示文章摘要的。该选项可以在blog\themes\主题名\_config.yml文件中找到。
+
+# When there is no description in the article’s front-matter, use excerpt as the description. use_excerpt_as_description: tr...
+      
     
   </div>
-
-
   
-  <h1 id="C-学习笔记"><a href="#C-学习笔记" class="headerlink" title="C++学习笔记"></a>C++学习笔记</h1><h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;hello&quot;</span>; <span class="comment">//泛型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>不需要考虑重名的问题</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>cout</code>是一个对象<br><code>&lt;&lt;</code>是<code>cout</code>的成员函数</p>
-<p>使用多个命名空间，有重名情况需要在重名的东西前加<code>要使用的命名空间名字::</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">200</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    my1::print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">200</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ::print(); <span class="comment">//单写::就是使用全局空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-  
-  
-    
-    <div class='footer'>
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-03-21</time>
+        
+      </div>
       
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-              
-            
-              
-                <p>本文永久链接是：<a href=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
-              
-            
-          </blockquote>
+        <div>
+          <a class='readmore' href='/2020/03/21/%E8%AE%BE%E7%BD%AEhexo%E9%A6%96%E9%A1%B5%E5%8F%AA%E6%98%BE%E7%A4%BA%E5%8D%9A%E6%96%87%E6%91%98%E8%A6%81/'>
+            阅读全文
+          </a>
         </div>
       
-      
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T16:56:30+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月6日</p>
-  </a>
 </div>
 
+          </div>
         
       
+    
+  </section>
+  
+    
+      <br>
+      <div class="prev-next">
         
-          
-
+          <a class="prev" rel="prev" href="/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
         
-      
+        <p class="current">
+          2 / 2
+        </p>
         
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
+      </div>
     
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
   
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>编程基础</p>
-          <p class='content'>学习编程的基础四大件数据结构和算法学完之后要刷leetcode（剑指offer）
-
-计算机网络tcp/ip协议栈（tcp/ip详解）
-操作系统进程和线程并发和锁内存分布调度等等 （深入理解操作系...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/01/05/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>C语言学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>C语言学习笔记变量类型
-int整型（通常为 16 位，其取值范围在-32768～32767 之间，也有用 32 位表示的int类型）
-float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
-
-
-
 
 
 </div>
@@ -609,22 +468,98 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
     
     
 
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/头像.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Wwwhw's BLOG</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:me@xxx.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/volantis-x/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="/"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
 
+  
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+  
+    
+    
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-text">命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li></ol></li></ol>
+      <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/Linux/" style="font-size: 14px; color: #999">Linux</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">日常问题</a>
     </div>
   </section>
 
+
+  
 
   
 
@@ -637,8 +572,8 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="C++学习笔记";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

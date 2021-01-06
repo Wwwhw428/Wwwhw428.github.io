@@ -19,9 +19,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>C++学习笔记 - Wwwhw&#39;s BLOG</title>
+  <title>设计模式笔记 - Wwwhw&#39;s BLOG</title>
   
 
+  
+    <meta name="description" content="用书：《大话设计模式（2007）》。主要学习单例、工厂、代理、策略模式、模版方法。">
   
 
   <!-- feed -->
@@ -395,7 +397,7 @@
     
     
       <h1 class="title">
-        C++学习笔记
+        设计模式笔记
       </h1>
       <div class='new-meta-box'>
         
@@ -430,7 +432,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="C++学习笔记" data-path="/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <div id="lc-pv" data-title="设计模式笔记" data-path="/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -447,15 +449,7 @@
 
 
   
-  <h1 id="C-学习笔记"><a href="#C-学习笔记" class="headerlink" title="C++学习笔记"></a>C++学习笔记</h1><h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;hello&quot;</span>; <span class="comment">//泛型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>不需要考虑重名的问题</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>cout</code>是一个对象<br><code>&lt;&lt;</code>是<code>cout</code>的成员函数</p>
-<p>使用多个命名空间，有重名情况需要在重名的东西前加<code>要使用的命名空间名字::</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">200</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    my1::print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">200</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ::print(); <span class="comment">//单写::就是使用全局空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+  <h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h4><h4 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a>工厂</h4><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><h4 id="模版方法（大话设计模式）"><a href="#模版方法（大话设计模式）" class="headerlink" title="模版方法（大话设计模式）"></a>模版方法（大话设计模式）</h4>
   
   
     
@@ -472,7 +466,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/>http://example.com/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/</a></p>
               
             
           </blockquote>
@@ -489,7 +483,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T16:56:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T18:04:09+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月6日</p>
@@ -511,7 +505,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/&title=设计模式笔记 - Wwwhw's BLOG&summary="
           
           >
           
@@ -523,7 +517,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/&title=设计模式笔记 - Wwwhw's BLOG&summary="
           
           >
           
@@ -535,7 +529,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/&title=设计模式笔记 - Wwwhw's BLOG&summary="
           
           >
           
@@ -565,20 +559,20 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>编程基础</p>
+        <a class='prev' href='/2021/05/30/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001%EF%BC%9A%E4%B8%A4%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84shell%E8%84%9A%E6%9C%AC/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>shell学习笔记01：两个简单的shell脚本</p>
+          <p class='content'>1.添加用户user1-10，但要求只有用户不存在的情况下才能添加。 2.切换工作目录至/var；统计/var目录下共有多个文件，并显示出来。
+
+注意运行shell时如果提示权限不够时需先运行c...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/'>
+          <p class='title'>编程基础<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>学习编程的基础四大件数据结构和算法学完之后要刷leetcode（剑指offer）
 
 计算机网络tcp/ip协议栈（tcp/ip详解）
 操作系统进程和线程并发和锁内存分布调度等等 （深入理解操作系...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/01/05/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>C语言学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>C语言学习笔记变量类型
-int整型（通常为 16 位，其取值范围在-32768～32767 之间，也有用 32 位表示的int类型）
-float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
         </a>
       
     </div>
@@ -621,7 +615,7 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-text">命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B"><span class="toc-text">单例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82"><span class="toc-text">工厂</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-text">代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="toc-text">策略模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E7%89%88%E6%96%B9%E6%B3%95%EF%BC%88%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="toc-text">模版方法（大话设计模式）</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -638,7 +632,7 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="C++学习笔记";
+  pdata.postTitle="设计模式笔记";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

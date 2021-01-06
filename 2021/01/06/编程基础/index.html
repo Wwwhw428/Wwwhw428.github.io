@@ -19,9 +19,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>C++学习笔记 - Wwwhw&#39;s BLOG</title>
+  <title>编程基础 - Wwwhw&#39;s BLOG</title>
   
 
+  
+    <meta name="description" content="看codesheep的视频做的笔记">
   
 
   <!-- feed -->
@@ -395,7 +397,7 @@
     
     
       <h1 class="title">
-        C++学习笔记
+        编程基础
       </h1>
       <div class='new-meta-box'>
         
@@ -430,7 +432,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="C++学习笔记" data-path="/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <div id="lc-pv" data-title="编程基础" data-path="/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -447,14 +449,18 @@
 
 
   
-  <h1 id="C-学习笔记"><a href="#C-学习笔记" class="headerlink" title="C++学习笔记"></a>C++学习笔记</h1><h2 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot;hello&quot;</span>; <span class="comment">//泛型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><p>不需要考虑重名的问题</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>cout</code>是一个对象<br><code>&lt;&lt;</code>是<code>cout</code>的成员函数</p>
-<p>使用多个命名空间，有重名情况需要在重名的东西前加<code>要使用的命名空间名字::</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">200</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    my1::print();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt; //input output stream</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> my1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,<span class="number">200</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> my1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ::print(); <span class="comment">//单写::就是使用全局空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <h2 id="学习编程的基础四大件"><a href="#学习编程的基础四大件" class="headerlink" title="学习编程的基础四大件"></a>学习编程的基础四大件</h2><h3 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h3><p>学完之后要刷leetcode（剑指offer）</p>
+<hr>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><h4 id="tcp-ip"><a href="#tcp-ip" class="headerlink" title="tcp/ip"></a>tcp/ip</h4><h4 id="协议栈（tcp-ip详解）"><a href="#协议栈（tcp-ip详解）" class="headerlink" title="协议栈（tcp/ip详解）"></a>协议栈（tcp/ip详解）</h4><hr>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><h4 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h4><h4 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h4><h4 id="和锁"><a href="#和锁" class="headerlink" title="和锁"></a>和锁</h4><h4 id="内存分布调度等等-（深入理解操作系统）"><a href="#内存分布调度等等-（深入理解操作系统）" class="headerlink" title="内存分布调度等等 （深入理解操作系统）"></a>内存分布调度等等 （深入理解操作系统）</h4><hr>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><h4 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h4><h4 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a>工厂</h4><h4 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h4><h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><h4 id="模版方法（大话设计模式）"><a href="#模版方法（大话设计模式）" class="headerlink" title="模版方法（大话设计模式）"></a>模版方法（大话设计模式）</h4><hr>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="Linux操作系统掌握"><a href="#Linux操作系统掌握" class="headerlink" title="Linux操作系统掌握"></a>Linux操作系统掌握</h3><p>《linux就该这么学》</p>
+<h4 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h4><h4 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h4><hr>
+<h3 id="编译-调试工具"><a href="#编译-调试工具" class="headerlink" title="编译/调试工具"></a>编译/调试工具</h3><p>GUN官方GCC和GDB文档<br>《debugging  with gdb 》中文版<br>《跟我一起写makefile》陈皓</p>
+<h4 id="Linux平台上-gcc"><a href="#Linux平台上-gcc" class="headerlink" title="Linux平台上 gcc"></a>Linux平台上 gcc</h4><h4 id="makefile"><a href="#makefile" class="headerlink" title="makefile"></a>makefile</h4><p>《跟我一起写makefile》</p>
+<h4 id="要会写-gdb调试工具"><a href="#要会写-gdb调试工具" class="headerlink" title="要会写 gdb调试工具"></a>要会写 gdb调试工具</h4><hr>
+<h3 id="Linux系统编程"><a href="#Linux系统编程" class="headerlink" title="Linux系统编程"></a>Linux系统编程</h3><p>《unix环境高级编程》<br>《linux高性能服务器编程》<br>《posix多线程程序设计》</p>
+<h3 id="多线程编程"><a href="#多线程编程" class="headerlink" title="多线程编程"></a>多线程编程</h3><h4 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h4><p>（unix环境高级编程）（Linux高性能服务器编程）（posix多线程程序设计）</p>
 
   
   
@@ -472,7 +478,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/>http://example.com/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</a></p>
               
             
           </blockquote>
@@ -489,7 +495,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T16:56:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T17:22:32+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月6日</p>
@@ -511,7 +517,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/&title=编程基础 - Wwwhw's BLOG&summary="
           
           >
           
@@ -523,7 +529,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/&title=编程基础 - Wwwhw's BLOG&summary="
           
           >
           
@@ -535,7 +541,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=C++学习笔记 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/&title=编程基础 - Wwwhw's BLOG&summary="
           
           >
           
@@ -565,20 +571,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/01/06/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>编程基础</p>
-          <p class='content'>学习编程的基础四大件数据结构和算法学完之后要刷leetcode（剑指offer）
-
-计算机网络tcp/ip协议栈（tcp/ip详解）
-操作系统进程和线程并发和锁内存分布调度等等 （深入理解操作系...</p>
+        <a class='prev' href='/2021/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>设计模式笔记</p>
+          <p class='content'>设计模式单例工厂代理策略模式模版方法（大话设计模式）</p>
         </a>
       
       
-        <a class='next' href='/2021/01/05/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>C语言学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>C语言学习笔记变量类型
-int整型（通常为 16 位，其取值范围在-32768～32767 之间，也有用 32 位表示的int类型）
-float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
+        <a class='next' href='/2021/01/06/C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>C++学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>C++学习笔记头文件12345678910#include&lt;iostream&gt; //input output streamusing namespace std;int main()...</p>
         </a>
       
     </div>
@@ -621,7 +622,7 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-text">命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E5%9B%9B%E5%A4%A7%E4%BB%B6"><span class="toc-text">学习编程的基础四大件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95"><span class="toc-text">数据结构和算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-text">计算机网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp-ip"><span class="toc-text">tcp&#x2F;ip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E6%A0%88%EF%BC%88tcp-ip%E8%AF%A6%E8%A7%A3%EF%BC%89"><span class="toc-text">协议栈（tcp&#x2F;ip详解）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91"><span class="toc-text">并发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C%E9%94%81"><span class="toc-text">和锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E5%B8%83%E8%B0%83%E5%BA%A6%E7%AD%89%E7%AD%89-%EF%BC%88%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-text">内存分布调度等等 （深入理解操作系统）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B"><span class="toc-text">单例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E5%8E%82"><span class="toc-text">工厂</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-text">代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="toc-text">策略模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E7%89%88%E6%96%B9%E6%B3%95%EF%BC%88%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="toc-text">模版方法（大话设计模式）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E8%B7%B5"><span class="toc-text">实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8E%8C%E6%8F%A1"><span class="toc-text">Linux操作系统掌握</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shell%E7%BC%96%E7%A8%8B"><span class="toc-text">shell编程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC"><span class="toc-text">脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91-%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-text">编译&#x2F;调试工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E5%B9%B3%E5%8F%B0%E4%B8%8A-gcc"><span class="toc-text">Linux平台上 gcc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#makefile"><span class="toc-text">makefile</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A6%81%E4%BC%9A%E5%86%99-gdb%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-text">要会写 gdb调试工具</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B"><span class="toc-text">Linux系统编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B"><span class="toc-text">多线程编程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="toc-text">网络编程</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -638,7 +639,7 @@ float浮点型（通常是 32 位，它至少有 6 位有效数字...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="C++学习笔记";
+  pdata.postTitle="编程基础";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
