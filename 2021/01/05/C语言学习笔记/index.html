@@ -566,6 +566,9 @@
 <h3 id="为什么使用char-存储字符串"><a href="#为什么使用char-存储字符串" class="headerlink" title="为什么使用char*存储字符串"></a>为什么使用<code>char*</code>存储字符串</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span>* p = <span class="string">&quot;abcdefghi&quot;</span>;</span><br><span class="line">  p++;<span class="comment">//p = p + sizeof(char)在遍历字符串的时候指针变量偏移一个字节</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, *p);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><em>输出结果</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意<code>char array[] = &#123;&#39;c&#39;,&#39;h&#39;,&#39;i&#39;,&#39;n&#39;,&#39;a&#39;&#125;;</code>和<code>char array[] = &quot;china&quot;;</code>不同，第一种数组大小是5，第二种数组大小是6比第一种多一个元素<code>\0</code></li>
+</ul>
 <h3 id="计算字符串长度"><a href="#计算字符串长度" class="headerlink" title="计算字符串长度"></a>计算字符串长度</h3><ul>
 <li><code>\012</code>:<code>\0</code>后接八以内数字表示八进制</li>
 <li><code>\x12</code>:<code>\x</code>后接数字或abcdef表示十六进制</li>
@@ -903,7 +906,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T16:56:21+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-07T22:29:12+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月7日</p>
