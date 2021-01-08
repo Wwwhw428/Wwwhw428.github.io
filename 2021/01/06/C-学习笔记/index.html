@@ -487,8 +487,52 @@
 <p><code>j</code>就是<code>n</code>，<code>n</code>就是<code>j</code></p>
 <h3 id="强弱类型"><a href="#强弱类型" class="headerlink" title="强弱类型"></a>强弱类型</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">200</span>;</span><br><span class="line">    <span class="keyword">char</span> *p = &amp;x;<span class="comment">//这句话不合法，类型必须相同</span></span><br><span class="line">    <span class="keyword">char</span> *q = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>));<span class="comment">//这句合法，因为所有32位下的指针类型都是4个字节</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>类是抽象的，对象是实例</p>
-<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/C++%E7%B1%BB%E5%AE%9A%E4%B9%89.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/C++%E7%B1%BB%E5%AE%9A%E4%B9%89.png" srcset="data:image/png;base64,666" title="类的定义"><br>| 概念              | 描述                                                         |<br>| —————– | ———————————————————— |<br>| 类成员函数        | 类的成员函数是指那些把定义和原型写在类定义内部的函数，就像类定义中的其他变量一样。 |<br>| 类访问修饰符      | 类成员可以被定义为 public、private 或 protected。默认情况下是定义为 private。 |<br>| 构造函数&amp;析构函数 | 类的构造函数是一种特殊的函数，在创建一个新的对象时调用。类的析构函数也是一种特殊的函数，在删除所创建的对象时调用。 |<br>| 拷贝构造函数      | 拷贝构造函数，是一种特殊的构造函数，它在创建对象时，是使用同一类中之前创建的对象来初始化新创建的对象。 |<br>| 友元函数          | 友元函数可以访问类的 private 和 protected 成员。             |<br>| 内联函数          | 通过内联函数，编译器试图在调用函数的地方扩展函数体中的代码。 |<br>| this指针          | 每个对象都有一个特殊的指针 <strong>this</strong>，它指向对象本身。        |<br>| 指向类的指针      | 指向类的指针方式如同指向结构的指针。实际上，类可以看成是一个带有函数的结构。 |<br>| 静态成员          | 类的数据成员和函数成员都可以被声明为静态的。                 |</p>
-<h3 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h3><ul>
+<p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/C++%E7%B1%BB%E5%AE%9A%E4%B9%89.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/C++%E7%B1%BB%E5%AE%9A%E4%B9%89.png" srcset="data:image/png;base64,666" title="类的定义"></p>
+<h3 id="访"><a href="#访" class="headerlink" title="访"></a>访</h3><table>
+<thead>
+<tr>
+<th>概念</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类成员函数</td>
+<td>类的成员函数是指那些把定义和原型写在类定义内部的函数，就像类定义中的其他变量一样。</td>
+</tr>
+<tr>
+<td>类访问修饰符</td>
+<td>类成员可以被定义为 public、private 或 protected。默认情况下是定义为 private。</td>
+</tr>
+<tr>
+<td>构造函数&amp;析构函数</td>
+<td>类的构造函数是一种特殊的函数，在创建一个新的对象时调用。类的析构函数也是一种特殊的函数，在删除所创建的对象时调用。</td>
+</tr>
+<tr>
+<td>拷贝构造函数</td>
+<td>拷贝构造函数，是一种特殊的构造函数，它在创建对象时，是使用同一类中之前创建的对象来初始化新创建的对象。</td>
+</tr>
+<tr>
+<td>友元函数</td>
+<td>友元函数可以访问类的 private 和 protected 成员。</td>
+</tr>
+<tr>
+<td>内联函数</td>
+<td>通过内联函数，编译器试图在调用函数的地方扩展函数体中的代码。</td>
+</tr>
+<tr>
+<td>this指针</td>
+<td>每个对象都有一个特殊的指针 <strong>this</strong>，它指向对象本身。</td>
+</tr>
+<tr>
+<td>指向类的指针</td>
+<td>指向类的指针方式如同指向结构的指针。实际上，类可以看成是一个带有函数的结构。</td>
+</tr>
+<tr>
+<td>静态成员</td>
+<td>类的数据成员和函数成员都可以被声明为静态的。</td>
+</tr>
+</tbody></table>
+<h3 id="问修饰符"><a href="#问修饰符" class="headerlink" title="问修饰符"></a>问修饰符</h3><ul>
 <li><p>与结构体不同，类必须写访问修饰符public或private。</p>
 </li>
 <li><p>缺省情况下默认是private，结构体默认是public。</p>
@@ -589,7 +633,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-08T14:03:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-08T15:51:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月8日</p>
@@ -719,7 +763,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-text">命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">新增变量类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bool"><span class="toc-text">bool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E7%AC%A6wchar-t"><span class="toc-text">宽字符wchar_t</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%E2%80%BB"><span class="toc-text">特点※</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%BC%B1%E7%B1%BB%E5%9E%8B"><span class="toc-text">强弱类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">访问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%EF%BC%88%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%EF%BC%89"><span class="toc-text">属性（成员变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%EF%BC%88%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">行为（成员函数）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-text">函数重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-text">析构函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-text">初始化列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E2%80%BB"><span class="toc-text">拷贝构造函数※</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-text">调用时机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%9D%A5%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B0%E5%88%9B%E5%BB%BA%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">通过使用另一个同类型的对象来初始化新创建的对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%8A%8A%E5%AE%83%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E7%BB%99%E5%87%BD%E6%95%B0"><span class="toc-text">复制对象把它作为参数传递给函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B9%B6%E4%BB%8E%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-text">复制对象，并从函数返回这个对象??</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-text">头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="toc-text">命名空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8A%BF"><span class="toc-text">优势</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-text">新增变量类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bool"><span class="toc-text">bool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E7%AC%A6wchar-t"><span class="toc-text">宽字符wchar_t</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="toc-text">引用类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9%E2%80%BB"><span class="toc-text">特点※</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%BC%B1%E7%B1%BB%E5%9E%8B"><span class="toc-text">强弱类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BF"><span class="toc-text">访</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">问修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-text">对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%EF%BC%88%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%EF%BC%89"><span class="toc-text">属性（成员变量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%EF%BC%88%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">行为（成员函数）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="toc-text">函数重载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="toc-text">析构函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="toc-text">初始化列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E2%80%BB"><span class="toc-text">拷贝构造函数※</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E6%97%B6%E6%9C%BA"><span class="toc-text">调用时机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BD%BF%E7%94%A8%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%90%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%9D%A5%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B0%E5%88%9B%E5%BB%BA%E7%9A%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">通过使用另一个同类型的对象来初始化新创建的对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%E6%8A%8A%E5%AE%83%E4%BD%9C%E4%B8%BA%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E7%BB%99%E5%87%BD%E6%95%B0"><span class="toc-text">复制对象把它作为参数传递给函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E5%AF%B9%E8%B1%A1%EF%BC%8C%E5%B9%B6%E4%BB%8E%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E8%BF%99%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="toc-text">复制对象，并从函数返回这个对象??</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
