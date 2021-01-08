@@ -21,9 +21,11 @@
   
   <title>C语言例题4：股神 - Wwwhw&#39;s BLOG</title>
   
-    <meta name="keywords" content="C">
+    <meta name="keywords" content="C,C习题">
   
 
+  
+    <meta name="description" content="股神Description假设买入1元股票，股票的变化规律是第一天不变（0），第二天涨1元（1），第三天跌1元（-1），第四天涨1元（1），第五天涨1元（1），第六天跌1元（-1），第七天涨1元（1），第八天涨1元（1），第九天涨1元（1），第十天跌1元（-1）…求N天后的股票剩余价格">
   
 
   <!-- feed -->
@@ -414,6 +416,13 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/C/">C</a><span class="sep"></span><a class="category-link" href="/categories/C/%E4%B9%A0%E9%A2%98/">习题</a>
+    </a>
+  </div>
+
 
           
         
@@ -450,6 +459,8 @@
 
   
   <h1 id="股神"><a href="#股神" class="headerlink" title="股神"></a>股神</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>假设买入1元股票，股票的变化规律是第一天不变（0），第二天涨1元（1），第三天跌1元（-1），第四天涨1元（1），第五天涨1元（1），第六天跌1元（-1），第七天涨1元（1），第八天涨1元（1），第九天涨1元（1），第十天跌1元（-1）…求N天后的股票剩余价格</p>
+<a id="more"></a>
+
 <p><img src="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E8%82%A1%E7%A5%9E.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/%E8%82%A1%E7%A5%9E.png" srcset="data:image/png;base64,666" title="股神"></p>
 <h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n &#x3D; 0;</span><br><span class="line">    int i &#x3D; 1;</span><br><span class="line">    int j &#x3D; 2;</span><br><span class="line">    int count &#x3D; 0;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    while ( i + j &lt;&#x3D; n)</span><br><span class="line">    &#123;</span><br><span class="line">        i &#x3D; i + j;</span><br><span class="line">        j &#x3D; j + 1;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    printf(&quot;%d&quot;, n - 2 * count);</span><br><span class="line">    return 0;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">    int n &#x3D; 0;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    </span><br><span class="line">    int count &#x3D; 0; &#x2F;&#x2F;-1的总天数</span><br><span class="line">    int i &#x3D; 1; &#x2F;&#x2F;第i天为-1</span><br><span class="line">    int sum &#x3D; 0;</span><br><span class="line">    for (; i &lt;&#x3D; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        i &#x3D; 2*i + 1;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    sum &#x3D; n - 2 * count;&#x2F;</span><br><span class="line">    </span><br><span class="line">        </span><br><span class="line">    printf(&quot;%d&quot;,sum);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -486,10 +497,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-06T20:40:05+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-08T17:01:26+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月6日</p>
+    <p>更新于：2021年1月8日</p>
   </a>
 </div>
 
@@ -498,7 +509,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C%E4%B9%A0%E9%A2%98/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C习题</p></a></div>
 
 
         
@@ -511,7 +522,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary=股神Description假设买入1元股票，股票的变化规律是第一天不变（0），第二天涨1元（1），第三天跌1元（-1），第四天涨1元（1），第五天涨1元（1），第六天跌1元（-1），第七天涨1元（1），第八天涨1元（1），第九天涨1元（1），第十天跌1元（-1）…求N天后的股票剩余价格"
           
           >
           
@@ -523,7 +534,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary=股神Description假设买入1元股票，股票的变化规律是第一天不变（0），第二天涨1元（1），第三天跌1元（-1），第四天涨1元（1），第五天涨1元（1），第六天跌1元（-1），第七天涨1元（1），第八天涨1元（1），第九天涨1元（1），第十天跌1元（-1）…求N天后的股票剩余价格"
           
           >
           
@@ -535,7 +546,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%984%EF%BC%9A%E8%82%A1%E7%A5%9E/&title=C语言例题4：股神 - Wwwhw's BLOG&summary=股神Description假设买入1元股票，股票的变化规律是第一天不变（0），第二天涨1元（1），第三天跌1元（-1），第四天涨1元（1），第五天涨1元（1），第六天跌1元（-1），第七天涨1元（1），第八天涨1元（1），第九天涨1元（1），第十天跌1元（-1）…求N天后的股票剩余价格"
           
           >
           
@@ -574,7 +585,9 @@
         <a class='next' href='/2021/01/06/C%E8%AF%AD%E8%A8%80%E4%BE%8B%E9%A2%983%EF%BC%9A%E6%B1%82s-1-1-2-1-2-3-n/'>
           <p class='title'>C语言例题3：求s=1+(1+2)+...+(1+2+3+...+n)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>求s=1+(1+2)+(1+2+3)+…+(1+2+3+…+n)的值Description编写一个程序，求s=1+(1+2)+(1+2+3)+…+(1+2+3+…+n)的值
-1234567891...</p>
+
+
+12345678...</p>
         </a>
       
     </div>
