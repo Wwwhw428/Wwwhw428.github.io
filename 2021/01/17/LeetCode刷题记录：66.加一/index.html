@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,9 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：日常问题 - Wwwhw&#39;s BLOG</title>
+  <title>LeetCode刷题记录：66.加一 - Wwwhw&#39;s BLOG</title>
+  
+    <meta name="keywords" content="LeetCode,数组">
   
 
+  
+    <meta name="description" content="来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/plus-one">
   
 
   <!-- feed -->
@@ -311,7 +313,7 @@
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -386,74 +388,227 @@
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        LeetCode刷题记录：66.加一
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Wang Haowen</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/">
-        解决microsoft应用商店开启代理后无法连接问题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>Microsoft的全部应用在中国区的设置默认都是直连，所以当打开网络代理之后就无法使用应用商店。</p>
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/LeetCode/">LeetCode</a><span class="sep"></span><a class="category-link" href="/categories/LeetCode/%E6%95%B0%E7%BB%84/">数组</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-05-16</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月17日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/">日常问题</a><span class="sep"></span><a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/Microsoft/">Microsoft</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="LeetCode刷题记录：66.加一" data-path="/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">plusOne</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; digits)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> length = digits.size();</span><br><span class="line">		<span class="keyword">int</span> i = length - <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//加一之后某一位需要进位则该位前每一位都为9</span></span><br><span class="line">		<span class="keyword">for</span> (i = length - <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; digits[i] == <span class="number">9</span>; i--) &#123;</span><br><span class="line">			digits[i] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//当最高位加一后仍需进位（即i == -1）时，在数组头插入1</span></span><br><span class="line">		<span class="keyword">if</span> (i == <span class="number">-1</span>) &#123;</span><br><span class="line">			digits.insert(digits.begin(), <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			digits[i]++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> digits;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/05/16/%E8%A7%A3%E5%86%B3microsoft%E5%BA%94%E7%94%A8%E5%95%86%E5%BA%97%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/>http://example.com/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T16:10:03+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月18日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E7%BB%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数组</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/&title=LeetCode刷题记录：66.加一 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/&title=LeetCode刷题记录：66.加一 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/17/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A66.%E5%8A%A0%E4%B8%80/&title=LeetCode刷题记录：66.加一 - Wwwhw's BLOG&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/18/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95%EF%BC%9A1588.%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%97%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LeetCode刷题记录：1588.所有奇数长度子数组的和</p>
+          <p class='content'>
+法一：  从头开始扫描，扫描到一个数时，找到每一个以该元素作为开始的奇数子数组并计入。
+
+12345678910111213141516class Solution &#123;public:...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/16/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/'>
+          <p class='title'>C++学习笔记3<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>模板模板函数1template(模板)&lt;class/typename name&gt;
+在模板函数定义中typename和class作用相同。
+1234567891011121314151...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -461,204 +616,22 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/Wwwhw428/Figurebed/main/img/头像.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Wwwhw's BLOG</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C-C/" href="/categories/C-C/"
-            id="categoriesC-C"
-            ><div class='name'>C/C++</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/C-C/%E4%B9%A0%E9%A2%98/" href="/categories/C-C/%E4%B9%A0%E9%A2%98/"
-            id="categoriesC-CE4B9A0E9A298"
-            ><div class='name'>习题</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/C-C/%E7%AC%94%E8%AE%B0/" href="/categories/C-C/%E7%AC%94%E8%AE%B0/"
-            id="categoriesC-CE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Github/" href="/categories/Github/"
-            id="categoriesGithub"
-            ><div class='name'>Github</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Hexo/" href="/categories/Hexo/"
-            id="categoriesHexo"
-            ><div class='name'>Hexo</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/LeetCode/" href="/categories/LeetCode/"
-            id="categoriesLeetCode"
-            ><div class='name'>LeetCode</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/LeetCode/%E5%AD%97%E7%AC%A6%E4%B8%B2/" href="/categories/LeetCode/%E5%AD%97%E7%AC%A6%E4%B8%B2/"
-            id="categoriesLeetCodeE5AD97E7ACA6E4B8B2"
-            ><div class='name'>字符串</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/LeetCode/%E6%95%B0%E7%BB%84/" href="/categories/LeetCode/%E6%95%B0%E7%BB%84/"
-            id="categoriesLeetCodeE695B0E7BB84"
-            ><div class='name'>数组</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/shell/" href="/categories/Linux/shell/"
-            id="categoriesLinuxshell"
-            ><div class='name'>shell</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"
-            id="categoriesE5ADA6E4B9A0E8B7AFE7BABF"
-            ><div class='name'>学习路线</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" href="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/"
-            id="categoriesE697A5E5B8B8E997AEE9A298"
-            ><div class='name'>日常问题</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/Microsoft/" href="/categories/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/Microsoft/"
-            id="categoriesE697A5E5B8B8E997AEE9A298Microsoft"
-            ><div class='name'>Microsoft</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AE%97%E6%B3%95/" href="/categories/%E7%AE%97%E6%B3%95/"
-            id="categoriesE7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
-            id="categoriesE8AEBEE8AEA1E6A8A1E5BC8F"
-            ><div class='name'>设计模式</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/C-C/" style="font-size: 24px; color: #555">C/C++</a> <a href="/tags/C-C-%E4%B9%A0%E9%A2%98/" style="font-size: 22px; color: #636363">C/C++习题</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/LeetCode/" style="font-size: 20px; color: #707070">LeetCode</a> <a href="/tags/Linux/" style="font-size: 16px; color: #8b8b8b">Linux</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 14px; color: #999">图床</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">学习笔记</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/" style="font-size: 14px; color: #999">学习路线</a> <a href="/tags/%E6%95%B0%E7%BB%84/" style="font-size: 18px; color: #7e7e7e">数组</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">日常问题</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
 
+
    <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="LeetCode刷题记录：66.加一";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
