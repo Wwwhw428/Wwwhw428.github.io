@@ -553,6 +553,14 @@
 <li>如何由一个无序序列构建成-一个堆?</li>
 <li>如果在输出堆顶元素后，调整剩余元素成为一个新的堆?</li>
 </ol>
+<ul>
+<li>堆排序</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort::heapSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; vec, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fa = (n / <span class="number">2</span>) - <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//初始堆调整</span></span><br><span class="line">	<span class="keyword">while</span> (fa &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">		heapAdjust(vec, fa--, n);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">		swap(vec[i], vec[<span class="number">0</span>]);</span><br><span class="line">		heapAdjust(vec, <span class="number">0</span>, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>堆调整</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort::heapAdjust</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; vec, <span class="keyword">int</span> fa, <span class="keyword">int</span> maxindex)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//数组从下标0开始存放</span></span><br><span class="line">	<span class="keyword">int</span> ch;</span><br><span class="line">	ch = <span class="number">2</span> * fa + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (ch &lt; maxindex) &#123;</span><br><span class="line">		<span class="keyword">if</span> (ch + <span class="number">1</span> &lt; maxindex &amp;&amp; vec[ch] &lt; vec[ch + <span class="number">1</span>]) &#123;</span><br><span class="line">			ch = ch + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (vec[fa] &lt; vec[ch]) &#123;</span><br><span class="line">			swap(vec[fa], vec[ch]);</span><br><span class="line">			fa = ch;</span><br><span class="line">			ch = <span class="number">2</span> * fa + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
   
   
@@ -587,7 +595,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T21:46:55+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T21:53:22+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年1月18日</p>
