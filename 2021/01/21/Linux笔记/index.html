@@ -458,28 +458,155 @@
 
 
   
-  <h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h2 id="aa"><a href="#aa" class="headerlink" title="aa"></a>aa</h2><p>/代表根目录</p>
-<p>~代表当前用户的家目录</p>
-<p>ls显示当前目录下所有文件</p>
-<p>bin文件夹存储二进制文件（可执行文件）</p>
-<p>dev</p>
-<p>root超级用户的家目录</p>
-<p>tmp存放临时文件，会被定期清理</p>
-<p>etc存放配置文件</p>
-<p>home除了root用户以外的目录的家目录在这里</p>
-<p>clear傻瓜式清屏</p>
-<p>ctrl+l也是清屏</p>
-<p>history历史指令</p>
-<p>相对路径：从当前文件夹开始描述</p>
-<p>绝对路径：从根目录开始描述</p>
-<p>pwd打印当前路径</p>
-<p>蓝色的是文件夹</p>
-<p>红色的是压缩包</p>
-<p>绿色的是可执行文件</p>
-<p>..父级路径</p>
-<p>./当前目录</p>
-<p>第一个位置为- 普通文件类型； d 文件夹类型；c 字符设备文件</p>
-<p>b 块设备文件；l 软连接（像快捷方式）；p 管道文件；s 套接字</p>
+  <h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h2 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h2><p>bin文件夹存储二进制文件（可执行文件）<br>dev<br>root超级用户的家目录<br>tmp存放临时文件，会被定期清理<br>etc存放配置文件<br>home除了root用户以外的目录的家目录在这里<br>白色 没法执行的普通文件<br>蓝色 目录<br>浅蓝色 链接文件<br>红色 压缩文件<br>黄色 设备文件<br>绿色 可执行文件</p>
+<h2 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h2><p>指令主体 选项 操作对象 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ls 显示当前目录下所有文件</span><br><span class="line">ls -l 以详细信息显示 </span><br><span class="line">ls -a 显示所有文件，包括隐藏文件&#x2F;文件夹</span><br><span class="line">ls -la 上面俩个加起来</span><br><span class="line">ls -l &#x2F;home 显示根目录下home里的文件</span><br><span class="line">ls -l &#x2F;home .&#x2F; 显示当前文件夹下和根目录下home里的文件</span><br><span class="line">ls -lh 能清晰地看到文件大小</span><br><span class="line"></span><br><span class="line">第一个位置为- 普通文件类型； d 文件夹类型；c 字符设备文件</span><br><span class="line">b 块设备文件；l 软连接（像快捷方式）；p 管道文件；s 套接字</span><br><span class="line"></span><br><span class="line">总用量是占的块数</span><br><span class="line"></span><br><span class="line">1文件类型 234属主 567属组 8910   11文件个数&#x2F;目录下的文件个数 12该文件属主 13该文件属组 14默认情况下文件占多大 15文件最后的修改时间 16文件名</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history历史指令</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd 打印当前工作路径</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd 改变当前目录</span><br><span class="line">相对路径：从当前文件夹开始描述</span><br><span class="line">绝对路径：从根目录开始描述</span><br><span class="line">.. 父级路径，上级目录</span><br><span class="line">.&#x2F; 当前目录</span><br><span class="line">&#x2F;代表根目录</span><br><span class="line">~代表当前用户的家目录</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir tt 在当前路径下创建一个叫tt文件夹</span><br><span class="line">mkdir &#x2F;home&#x2F;wwwhw&#x2F;tt&#x2F;abc 在指定路径下创建一个叫abc的文件夹</span><br><span class="line">mkdir -p .&#x2F;linux&#x2F;text 创建多级不存在的文件夹</span><br><span class="line">mkdir t1 t2 t3 创建多个文件夹</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch a.c 创建a.c文件</span><br><span class="line">touch a.c b.c c.c 创建多个文件</span><br><span class="line">touch ..&#x2F;test.word 在指定目录创建一个文件</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp .&#x2F;a.c .&#x2F;abc 将当前路径下的a.c 复制到当前文件夹的abc文件夹里</span><br><span class="line">cp .&#x2F;a.c .&#x2F;abc&#x2F;1.c 将当前路径下的a.c 复制到当前文件夹的abc文件夹里并重命名为1.c</span><br><span class="line">cd -r test tt循环递归的赋值当前文件夹，将test文件夹复制到tt文件夹里</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv .&#x2F;test.word .&#x2F;abc 将test.word移动到当前文件夹下abc文件夹中</span><br><span class="line">mv tt test移动文件夹不需要加-r</span><br><span class="line">mv test.word new.word 将test.word重命名为new.word</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rm new.word 删除new.word</span><br><span class="line">rm -r .&#x2F;test&#x2F;tt 循环递归地删除test文件夹中的tt文件夹</span><br><span class="line">touch a.c b.c c.c</span><br><span class="line">rm *.c 删除文件名以.c为结尾的文件</span><br><span class="line">touch a1 a2 a3</span><br><span class="line">rm a* 删除文件名以a为开头的文件</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls .&#x2F; &gt; tmp.c 将输出重定向到tmp.c文件里，tmp.c不存在自动创建,覆盖tmp.c内的内容</span><br><span class="line">ls &#x2F; &gt;&gt; tmp.c 将输出重定向到tmp.c文件里，tmp.c不存在自动创建，在tmp.c内的内容后追加</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat tmp.c 将文件打印在终端</span><br><span class="line">cat a.c tmp.c &gt; b.c 将a.c，tmp.c的内容打印到终端并重定向到b.c中</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df 查看磁盘空间</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">free -m 查看内存使用情况</span><br><span class="line">mem内存使用情况</span><br><span class="line">swap交换空间使用情况</span><br><span class="line">总的 已使用的 剩余的 被分享使用的 缓冲区&#x2F;高速缓冲区 被应用程序使用的内存大小</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head 查看文档的前几行，默认前10行</span><br><span class="line">head -2 a.c 查看a.c前2行</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail 查看文档的最后后几行，默认</span><br><span class="line">tail -3 a.c 查看a.c最后三行</span><br><span class="line">tail -f a.c 动态显示a.c内容（多开一个终端改a.c内容试试）</span><br></pre></td></tr></table></figure>
+
+
+<p>ctrl+c 或ctrl+z停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">less .&#x2F; </span><br><span class="line">less tmp.c 查看文件中内容 自己试吧</span><br><span class="line">q推出</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wc -l (lines) .&#x2F;tmp 查看文件里有多少行</span><br><span class="line">wc -w (word) .&#x2F;tmp 查看文件里有多少单词</span><br><span class="line">wc -c (char) .&#x2F;tmp 查看文件里有多少字节</span><br><span class="line">wc -lwc .&#x2F;tmp 查看文件里有多少行，单词，字节 顺序为lwc不变</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">date 输出时间</span><br><span class="line">date +%F 年月日</span><br><span class="line">date +&quot;%F %T&quot; 年月日 （注意这里的空格）时分秒</span><br><span class="line">date -d &quot;-2 day&quot; &quot;+%F&quot; 两天前的日期</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cal 输出当前月份日历</span><br><span class="line">cal -1 输出当前月份日历</span><br><span class="line">cal -3 输出当前月上一个月，当前月，当前月下一个月 只能写-1 -3</span><br><span class="line">cal -y 输出当前年的日历</span><br><span class="line">cal 11 2021 输出2021年11月日历</span><br><span class="line">cal 20 输出20年日历</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clear傻瓜式清屏</span><br><span class="line">ctrl+l也是清屏</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls .&#x2F; | 将输出结果作为管道的输入结果</span><br><span class="line">ls .&#x2F; | grep c 将输出结果作为管道的输入结果并筛选出带c的</span><br><span class="line">很多命令都能加 |</span><br></pre></td></tr></table></figure>
+<h2 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h2><h3 id="配置vim"><a href="#配置vim" class="headerlink" title="配置vim"></a>配置vim</h3><p>/etc/vim/vimrc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim 文件名 用vim打开文件，如果文件不存在就新建一个这个文件</span><br><span class="line">vim +4 文件名 打开后光标处在第几行</span><br><span class="line">vim +&#x2F;a 文件名 打开文件a字符高亮</span><br><span class="line">vim打开多个文件 自己试</span><br></pre></td></tr></table></figure>
+<h3 id="1-命令模式"><a href="#1-命令模式" class="headerlink" title="1.命令模式"></a>1.命令模式</h3><ul>
+<li><p>在命令模式下进入编辑模式</p>
+<ol>
+<li>i 在光标所在字符前插入</li>
+<li></li>
+</ol>
+</li>
+<li><p>在命令模式下进入末行模式</p>
+</li>
+</ul>
+<h3 id="2-编辑模式"><a href="#2-编辑模式" class="headerlink" title="2.编辑模式"></a>2.编辑模式</h3><ul>
+<li>esc推出编辑模式进出命令模式</li>
+<li>命令模式下:进入末行模式</li>
+</ul>
+<h2 id="3-末行模式"><a href="#3-末行模式" class="headerlink" title="3.末行模式"></a>3.末行模式</h2><ul>
+<li><p>退出</p>
+<ol>
+<li>:q不保存退出</li>
+<li>:wq保存退出</li>
+<li>:q!强制退出不保存</li>
+</ol>
+</li>
+<li><pre><code>  ^ 光标移到行首
+  $ 光标移到行末
+  gg 光标移到首行
+  G 光标移到末行
+  ctrl b 向上翻页
+  ctrl f 向下翻页
+  yy 复制光标所在行
+  p 粘贴
+  2 yy 复制当前光标所在行开始2行
+  ctrl v 加方向键可视块
+  dd 删除光标所在行
+  2 dd 删除2行
+  D 
+  u 撤销
+  ctrl r 恢复
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 软链接&#x2F;硬链接</span><br><span class="line"></span><br><span class="line">### 软链接</span><br><span class="line"></span><br><span class="line">* 相当于windows的快捷方式</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ln -s /home/wwwhw/a.c ./桌面/a.cc 在桌面上生成一个a.c的软链接（快捷方式）名字叫a.cc 不写名字默认原名字 源文件必须写绝对路径
+la -s /home/wwwhw/text ./桌面 在桌面上生成一个text文件夹的软链接（快捷方式）
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 硬链接</span><br><span class="line"></span><br><span class="line">* 复制且同步更新的一个文件</span><br><span class="line">* 不能给文件夹生成硬链接</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ln -d /home/wwwhw/a.c ./桌面 在桌面上生成一个a.c的硬链接
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 压缩&#x2F;解压</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+tar -zxvf test.tar.gz 解压test.tar.gz
+tar -zcvf test.tar.gz ./test 将当前文件夹下的test文件压缩，名字叫test.tar.gz 重名的话直接覆盖
+tar -zcvf ./桌面/test2.tar.gz ./test 将当前文件夹下的test文件压缩，放在指定路径
+c创建文件 v显示过程 
+gzip、rar 需要安装
+rar a aaa a2.c 将a2.c压缩成aaa.rar
+rar x aaa.rar 将aaa.rar解压
+unrar x 解压
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## apt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+sudo apt install rar 安装
+sudo apt remove rar 卸载
+sudo apt-get update
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+cmatrix 代码雨
+sl 小火车
+sl -F
+sl -small
+cowsay &quot;hello&quot;
+cowsay -l 可选动物
+cowsay -f hellokitty &quot;hello&quot;
+oneko 养猫
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## group</span><br><span class="line"></span><br><span class="line">## shadow</span><br><span class="line"></span><br><span class="line">## password</span><br><span class="line"></span><br><span class="line">没有密码的用户是无法登录的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+sudo adduser test 添加名叫test的用户，没指定组时新生成一个同名组
+sudo adduser -gid 6754 -uid 1212 lisi 添加一个叫lisi的用户id为1212，属于6754组，-gid gid为所属组（groupid）
+</code></pre>
+</li>
+</ul>
+<p>sudo usermod -u 1521 lisi 修改lisi的uid为1521<br>sudo usermod -g 1001 lisi 修改lisi的gid为1521<br>sudo usermod -l li lisi 将lisi名改为li</p>
+<p>sudo deluser –remove-home lisi 删除用户lisi和/home下的lisi文件夹<br>sudo deluser lisi 删除用户lisi但不删除文件夹<br>su 用户名 切换用户<br>su 不加用户名切换到root用户</p>
+<p>sudo password root 设置root用户密码</p>
+<p>whoami 查看当前用户是谁</p>
+<p>addgroup -gid 2345 class01 添加class01组，gid为2345</p>
+<p>sudo groupmod -g 2346 class01 将class01组gid修改为2346<br>sudo groupmod -n class class01 将class01组名修改为calss</p>
+<p>ls -l /home/wwwhw 查看wwwhw文件夹下所有文件详细信息</p>
+<p>sudo chown test /home/wwwhw/a.c 将指定文件夹下的a.c所属主修改为test<br>sudo chgrp class /home/wwwhw/a.c 将指定文件夹下的a.c所属组改为class<br>sudo chown lisi:class ./a2.c 将指定文件夹下的a.c所属主和所属组修改为lisi和class</p>
+<pre><code>
+添加用户是根目录会自动生成同名文件夹，
+
+在password中 用户名，密码占位符，uid，gid，描述，用户进入系统后默认位置
+</code></pre>
 
   
   
@@ -514,10 +641,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-21T19:55:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-25T20:55:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月21日</p>
+    <p>更新于：2021年1月25日</p>
   </a>
 </div>
 
@@ -658,7 +785,7 @@ nums[i],nums[i]互换...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF"><span class="toc-text">终端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aa"><span class="toc-text">aa</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF"><span class="toc-text">终端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-text">文件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">基础指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM"><span class="toc-text">VIM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEvim"><span class="toc-text">配置vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="toc-text">1.命令模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F"><span class="toc-text">2.编辑模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="toc-text">3.末行模式</span></a></li></ol>
     </div>
   </section>
 
