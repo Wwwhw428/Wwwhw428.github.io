@@ -602,11 +602,9 @@ sudo adduser -gid 6754 -uid 1212 lisi 添加一个叫lisi的用户id为1212，�
 <p>sudo groupmod -g 2346 class01 将class01组gid修改为2346<br>sudo groupmod -n class class01 将class01组名修改为calss</p>
 <p>ls -l /home/wwwhw 查看wwwhw文件夹下所有文件详细信息</p>
 <p>sudo chown test /home/wwwhw/a.c 将指定文件夹下的a.c所属主修改为test<br>sudo chgrp class /home/wwwhw/a.c 将指定文件夹下的a.c所属组改为class<br>sudo chown lisi:class ./a2.c 将指定文件夹下的a.c所属主和所属组修改为lisi和class</p>
-<pre><code>
-添加用户是根目录会自动生成同名文件夹，
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">添加用户是根目录会自动生成同名文件夹，</span><br><span class="line"></span><br><span class="line">在password中 用户名，密码占位符，uid，gid，描述，用户进入系统后默认位置</span><br><span class="line"></span><br><span class="line">## 权限管理</span><br><span class="line"></span><br><span class="line">ls显示的的：属主（owner） 属组（group） 其他用户（others） </span><br><span class="line"></span><br><span class="line">x表示execute（执行）</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;shell</span><br><span class="line">chmod u+x a2.c #+增加</span><br><span class="line">chmod u-x,g-w,o-r a2.c #-去除</span><br><span class="line">chmod u&#x3D;rwx,g&#x3D;rw,o&#x3D;r a2.c #&#x3D;相当于覆盖</span><br><span class="line">#r:4  w:2  x:1  -:0</span><br><span class="line">chmod 764 a2.c</span><br></pre></td></tr></table></figure>
 
-在password中 用户名，密码占位符，uid，gid，描述，用户进入系统后默认位置
-</code></pre>
+
 
   
   
@@ -641,10 +639,10 @@ sudo adduser -gid 6754 -uid 1212 lisi 添加一个叫lisi的用户id为1212，�
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-27T19:22:28+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-18T11:02:40+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月27日</p>
+    <p>更新于：2021年2月18日</p>
   </a>
 </div>
 
