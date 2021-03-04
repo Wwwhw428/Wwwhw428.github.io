@@ -572,6 +572,8 @@
 <p>最多能分250万组(200万组)，200万组太多，分成1000组<br>0-100 (统计这个区间的数据个数)<br>100-2000 200-30000</p>
 </li>
 </ol>
+<h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2><p>例如要对外存中4500个记录进行归并，而内存大小只能容纳750个记录，在第一阶段，我们可以每次读取750个记录进行排序，这样可以分六次读取，进行排序，可以得到六个有序的归并段。</p>
+<p>每个归并段的大小是750个记录，记住，这些归并段已经全部写到临时缓冲区(由个可<br>用的磁盘充当)内了,这是第一步的排序结果。 接下来开始归并算法将内存空间划分为三份，每份大小25个记录,其中两个用作输入缓冲区，另外一个用作输出缓冲区。首先对Segment_ .1和Segment_ 2进行归并，先从每个归并段中读取250个记录到输入缓冲区，对其归并,归并结果放到输出缓冲区，当输出缓冲区满后，将其写道临时缓冲区内，如果某个输入缓冲区空了，则从相应的归并段中再读取250个记录进行继续归并，反复以上步骤，直至Segment_ 1和Segment 2全都排好序，形成-一个大小为1500的记录，然后对Segment 3和Segment 4、Segment _5和Segment 6进行同样的操作。<br>对归并好的大小为1500的记录进行如同步骤1-样的操作，进行继续排序，直至最后形成<br>大小为4500的归并段，至此，排序结束。如下图:</p>
 
   
   
@@ -606,10 +608,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-22T15:03:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-23T09:24:09+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年2月22日</p>
+    <p>更新于：2021年2月23日</p>
   </a>
 </div>
 
@@ -737,7 +739,7 @@ gccC/C++编译器，将C/C+...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%A8%E5%A0%86%E6%8E%92%E5%BA%8F%E7%9A%84%E6%80%9D%E6%83%B3%E8%A7%A3%E5%86%B3"><span class="toc-text">1.用堆排序的思想解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BF%AB%E6%8E%92%E6%80%9D%E6%83%B3"><span class="toc-text">2.快排思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E5%9B%BE-amp-%E5%93%88%E5%B8%8C%E5%88%86%E6%B5%81%E4%BE%8B%E9%A2%98"><span class="toc-text">位图&amp;哈希分流例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-text">第四题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">布隆过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BB%9F%E8%AE%A1"><span class="toc-text">分段统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-text">例题</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%A8%E5%A0%86%E6%8E%92%E5%BA%8F%E7%9A%84%E6%80%9D%E6%83%B3%E8%A7%A3%E5%86%B3"><span class="toc-text">1.用堆排序的思想解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BF%AB%E6%8E%92%E6%80%9D%E6%83%B3"><span class="toc-text">2.快排思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%8D%E5%9B%BE-amp-%E5%93%88%E5%B8%8C%E5%88%86%E6%B5%81%E4%BE%8B%E9%A2%98"><span class="toc-text">位图&amp;哈希分流例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-text">第四题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">布隆过滤器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E7%BB%9F%E8%AE%A1"><span class="toc-text">分段统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-text">例题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E6%8E%92%E5%BA%8F"><span class="toc-text">外部排序</span></a></li></ol>
     </div>
   </section>
 
