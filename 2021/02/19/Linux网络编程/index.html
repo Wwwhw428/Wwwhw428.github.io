@@ -19,9 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Wwwhw&#39;s BLOG</title>
+  <title>Linux网络编程 - Wwwhw&#39;s BLOG</title>
+  
+    <meta name="keywords" content="Linux">
   
 
+  
+    <meta name="description" content="Linux网络编程笔记">
   
 
   <!-- feed -->
@@ -394,6 +398,62 @@
     
     
     
+      <h1 class="title">
+        Linux网络编程
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Wang Haowen</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Linux/">Linux</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年2月19日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Linux网络编程" data-path="/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
   </div>
 
 
@@ -523,30 +583,44 @@
 <li><p>int backlog：</p>
 </li>
 </ul>
-<h3 id="accept"><a href="#accept" class="headerlink" title="accept"></a>accept</h3><p>接受套接字上的连接</p>
+<h3 id="accept"><a href="#accept" class="headerlink" title="accept"></a>accept</h3><p>从全连接队列中取出一个连接，能够反映出三次握手是否成功</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">accept</span><span class="params">(<span class="keyword">int</span> sockfd, struct sockaddr *addr, <span class="keyword">socklen_t</span> *addrlen)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回值：指向一个新的套接字的文件描述符</li>
+<li>struct sockaddr *addr：传入传出参数，传出客户端地址结构信息</li>
+<li>socklen_t *addrlen：传入传出参数，客户端地址结构信息的长度</li>
 </ul>
 <h2 id="inet-pton-ntop"><a href="#inet-pton-ntop" class="headerlink" title="inet_pton/ntop"></a>inet_pton/ntop</h2><p>将IPv4和IPv6地址从本地字节序转换成网络字节序/从网络字节序转换成本地字节序</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inet_pton</span><span class="params">(<span class="keyword">int</span> af, <span class="keyword">const</span> <span class="keyword">char</span> *src, <span class="keyword">void</span> *dst)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>int af：AF_INET，AF_INET6</p>
-</li>
-<li><p>const char *src：IP地址字符串</p>
-</li>
-<li><p>void *dst：转换后的二进制数</p>
-</li>
+<li>int af：AF_INET，AF_INET6</li>
+<li>const char *src：IP地址字符串</li>
+<li>void *dst：转换后的二进制数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">char</span> *<span class="title">inet_ntop</span><span class="params">(<span class="keyword">int</span> af, <span class="keyword">const</span> <span class="keyword">void</span> *src, <span class="keyword">char</span> *dst, <span class="keyword">socklen_t</span> size)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回一个，失败返回空并设置errno</li>
+<li>const void *src：</li>
+<li>char *dst：</li>
+<li>socklen_t size：</li>
 </ul>
 <h2 id="connect"><a href="#connect" class="headerlink" title="connect"></a>connect</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">connect</span><span class="params">(<span class="keyword">int</span> sockfd, <span class="keyword">const</span> struct sockaddr *addr, <span class="keyword">socklen_t</span> addrlen)</span></span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>int sockfd：用于通讯的套接字</li>
-<li>const struct sockaddr *addr：服务器的地址结构信息</li>
+<li><p>返回值：成功返回0，失败返回-1并设置errno</p>
+</li>
+<li><p>int sockfd：用于通讯的套接字</p>
+</li>
+<li><p>const struct sockaddr *addr：服务器的地址结构信息</p>
+</li>
 </ul>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//server.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;arpa/inet.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SER_IP <span class="meta-string">&quot;192.168.183.128&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SER_PORT 8000</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">1024</span>];</span><br><span class="line">    <span class="comment">//创建一个套接字</span></span><br><span class="line">    <span class="keyword">int</span> lfd = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">//为套接字绑定地址结构信息</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">ser_addr</span>;</span></span><br><span class="line">    <span class="keyword">int</span> dst;</span><br><span class="line">    inet_pton(AF_INET, SER_IP, (<span class="keyword">void</span>*)&amp;dst);</span><br><span class="line">    ser_addr.sin_family = AF_INET;</span><br><span class="line">    ser_addr.sin_port = htons(SER_PORT);</span><br><span class="line">    <span class="comment">//ser_addr.sin_addr.s_addr = htonl(INADDR_ANY);</span></span><br><span class="line">    <span class="comment">//127.0.0.1本地回环 用于测试本地网络</span></span><br><span class="line">    ser_addr.sin_addr.s_addr = dst;</span><br><span class="line">    bind(lfd, (struct sockaddr*)&amp;ser_addr, <span class="keyword">sizeof</span>(ser_addr));</span><br><span class="line">	<span class="comment">//服务器开始监听</span></span><br><span class="line">    listen(lfd, <span class="number">64</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">socklen_t</span> len = <span class="keyword">sizeof</span>(ser_addr);</span><br><span class="line">    <span class="keyword">int</span> cfd = accept(lfd, (struct sockaddr*)&amp;ser_addr, &amp;len);</span><br><span class="line">    <span class="comment">//回射服务器</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> rr = read(cfd, buf, <span class="number">1024</span>);</span><br><span class="line">        write(STDOUT_FILENO, buf, rr);<span class="comment">//#define STDOUT_FILENO 1</span></span><br><span class="line">        write(cfd, buf, rr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//client.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SER_IP <span class="meta-string">&quot;192.168.183.128&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SER_PORT 8000</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">1024</span>];</span><br><span class="line">    <span class="comment">//创建一个套接字</span></span><br><span class="line">    <span class="keyword">int</span> cfd = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>);</span><br><span class="line">    <span class="comment">//客户端可以不绑定地址结构信息，不绑定系统自动分配一个</span></span><br><span class="line">    <span class="comment">//需要服务器的地址结构信息</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">ser_addr</span>, <span class="title">cli_addr</span>;</span></span><br><span class="line">    ser_addr.sin_family = AF_INET;</span><br><span class="line">    <span class="keyword">int</span> dst;</span><br><span class="line">    inet_pton(AF_INET, SER_IP, (<span class="keyword">void</span>*)&amp;dst);</span><br><span class="line">    ser_addr.sin_port = htons(SER_PORT);</span><br><span class="line">    ser_addr.sin_addr.s_addr = dst;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> cret = connect(cfd, (struct sockaddr*)&amp;ser_addr, <span class="keyword">sizeof</span>(ser_addr));</span><br><span class="line">    <span class="keyword">if</span> (cret &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        perror(<span class="string">&quot;connect error:&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;建立连接成功\n&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> rr = read(STDIN_FILENO, buf, <span class="number">1024</span>);</span><br><span class="line">        write(cfd, buf, rr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>半连接队列：最后一次握手没完成</p>
+<p>全连接队列：最后一次握手完成后从半连接队列移至全连接队列</p>
+<p>accpet从全连接队列中将已经建立连接的节点取出到应用层中</p>
+<p>判断是否有建立的连接==判断accpet是否有指向一个套接字的返回值</p>
 <h1 id="协议格式"><a href="#协议格式" class="headerlink" title="协议格式"></a>协议格式</h1><h2 id="数据包封装"><a href="#数据包封装" class="headerlink" title="数据包封装"></a>数据包封装</h2><h2 id="以太网帧格式"><a href="#以太网帧格式" class="headerlink" title="以太网帧格式"></a>以太网帧格式</h2><p>目的地址（mac地址）</p>
 <p>源地址</p>
 <h3 id="TCP段格式"><a href="#TCP段格式" class="headerlink" title="TCP段格式"></a>TCP段格式</h3><p>16位源端口号，端口号最大时2^16=65536</p>
@@ -642,10 +716,111 @@
 <li><p>快恢复：ssthresh设为当前窗口大小的一半，拥塞窗口大小也设为当前窗口大小的一半。</p>
 </li>
 </ul>
-<h1 id="多路I-O复用"><a href="#多路I-O复用" class="headerlink" title="多路I/O复用"></a>多路I/O复用</h1><p>半连接队列：最后一次握手没完成</p>
-<p>全连接队列：最后一次握手完成后从半连接队列移至全连接队列</p>
-<p>accpet从全连接队列中将已经建立连接的节点取出到应用层中</p>
-<p>判断是否有建立的连接==判断accpet是否有指向一个套接字的返回值</p>
+<h1 id="多进程服务器"><a href="#多进程服务器" class="headerlink" title="多进程服务器"></a>多进程服务器</h1><ul>
+<li>情况：<ul>
+<li>已经accept一次后，全连接队列中还有剩余</li>
+<li>while(1){accept;}<ul>
+<li>当进行一次accept后，可能无法进行数据传输。因为程序在下一次accept处阻塞（全连接队列为空）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多客户端=&gt;多次accept</li>
+</ul>
+<h1 id="阻塞-amp-非阻塞"><a href="#阻塞-amp-非阻塞" class="headerlink" title="阻塞&amp;非阻塞"></a>阻塞&amp;非阻塞</h1><ul>
+<li>管道、设备、套接字等可以修改阻塞属性</li>
+</ul>
+<h2 id="fcntl"><a href="#fcntl" class="headerlink" title="fcntl"></a>fcntl</h2><p>更改文件描述符的属性</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fcntl</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">int</span> cmd, ... <span class="comment">/* arg */</span> )</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值</li>
+</ul>
+<h1 id="多路I-O复用"><a href="#多路I-O复用" class="headerlink" title="多路I/O复用"></a>多路I/O复用</h1><p>用一个工具监听一堆io</p>
+<ul>
+<li><p>BIO：block io阻塞io   同步io</p>
+</li>
+<li><p>NIO：同步io</p>
+<ul>
+<li>操作系统中：nonblock io非阻塞io</li>
+<li>JAVA：new io</li>
+</ul>
+</li>
+<li><p>AIO：异步io</p>
+</li>
+</ul>
+<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><p>监听io事件</p>
+<p>也会造成阻塞（监听的事件都没有发生/timeout为空）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;sys/select.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>返回值：触发的事件的和</p>
+</li>
+<li><p>int nfds：需要监听的最大的文件描述符+1，作为内核轮询的上限</p>
+</li>
+<li><p>fd_set *readfds：传入传出参数，位图，128个字节，1024位，需要监听读事件的位图</p>
+</li>
+<li><p>fd_set *writefds：传入传出参数，需要监听写事件的位图</p>
+</li>
+<li><p>fd_set *exceptfds：传入传出参数，需要监听异常事件的位图</p>
+</li>
+<li><p>struct timeval *timeout：传入传出参数，传出参数为剩余时间，超时时长，传空表示没有任何事件发生时会阻塞在select上，都设置成0就表示不阻塞</p>
+<ul>
+<li><pre><code class="c">  struct timeval &#123;
+      long tv_sec; /*seconds*/
+      long tv_usec; /*microseconds*/
+  &#125;;
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">* lfd监听套接字</span><br><span class="line"></span><br><span class="line">* cfd用于通讯的套接字</span><br><span class="line">* 优缺点：</span><br><span class="line">	* 优点：跨平台</span><br><span class="line">	* 缺点：</span><br><span class="line">		* 受限于fd_set，最多只能同时监听1024个文件描述符</span><br><span class="line">		* 底层监听方式是轮询，效率低</span><br><span class="line">		* 用户到内核空间的大量数据拷贝（fd_set类型的参数）</span><br><span class="line">		* fd_set传入传出参数，每次调用select都要重新赋值</span><br><span class="line">* 允许TIME_WAIT状态复用</span><br><span class="line">* </span><br><span class="line"></span><br><span class="line">### 操作位图的函数</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+void FD_CLR(int fd, fd_set *set);
+int FD_ISSET(int fd, fd_set *set);
+void FD_SET(int fd, fd_set *set);
+void FD_ZERO(fd_set) *set;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">阻塞在lfd或cfd上</span><br><span class="line"></span><br><span class="line">### 例子</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;c</span><br><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;unistd.h&gt;</span><br><span class="line">#include&lt;sys&#x2F;socket.h&gt;</span><br><span class="line">#include&lt;arpa&#x2F;inet.h&gt;</span><br><span class="line">#include&lt;netinet&#x2F;in.h&gt;</span><br><span class="line">#include&lt;fcntl.h&gt;</span><br><span class="line">#include&lt;errno.h&gt;</span><br><span class="line">#include&lt;sys&#x2F;select.h&gt;</span><br><span class="line"></span><br><span class="line">#define SER_IP &quot;192.168.183.128&quot;</span><br><span class="line">#define SER_PORT 8000</span><br><span class="line">&#x2F;&#x2F;多进程服务器</span><br><span class="line">int main() &#123;</span><br><span class="line">    char buf[1024];</span><br><span class="line">    &#x2F;&#x2F;创建一个套接字</span><br><span class="line">    int lfd &#x3D; socket(AF_INET, SOCK_STREAM, 0);</span><br><span class="line">    &#x2F;&#x2F;为套接字绑定地址结构信息</span><br><span class="line">    struct sockaddr_in ser_addr, cli_addr;</span><br><span class="line">    ser_addr.sin_family &#x3D; AF_INET;</span><br><span class="line">    ser_addr.sin_port &#x3D; htons(SER_PORT);</span><br><span class="line">    ser_addr.sin_addr.s_addr &#x3D; htonl(INADDR_ANY);</span><br><span class="line">    int bi &#x3D; bind(lfd, (struct sockaddr*)&amp;ser_addr, sizeof(ser_addr));</span><br><span class="line">	&#x2F;&#x2F;服务器开始监听</span><br><span class="line">    listen(lfd, 64);</span><br><span class="line">    </span><br><span class="line">    socklen_t len &#x3D; sizeof(cli_addr);</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F;select</span><br><span class="line">    int maxfd &#x3D; lfd;</span><br><span class="line">    fd_set rset, aset;&#x2F;&#x2F;aset用来记录所有监听的</span><br><span class="line">    FD_ZERO(&amp;aset);&#x2F;&#x2F;初始化写位图，所有位置为0</span><br><span class="line">    FD_SET(lfd, &amp;aset);</span><br><span class="line">    struct timeval timeout;</span><br><span class="line">    timeout.tv_sec &#x3D; 5;</span><br><span class="line">    timeout.tv_usec &#x3D; 0;</span><br><span class="line">    while(1) &#123;</span><br><span class="line">        rset &#x3D; aset;</span><br><span class="line">        int count &#x3D; select(maxfd + 1, &amp;rset, NULL, NULL, NULL);</span><br><span class="line">        &#x2F;*if (count &#x3D;&#x3D; 0) &#123;</span><br><span class="line">            printf(&quot;5秒内没有时间触发\n&quot;);</span><br><span class="line">            continue;</span><br><span class="line">        &#125;*&#x2F;</span><br><span class="line">        if (FD_ISSET(lfd, &amp;rset)) &#123;</span><br><span class="line">            int cfd &#x3D; accept(lfd, (struct sockaddr*)&amp;cli_addr, &amp;len);</span><br><span class="line">            fcntl(cfd, F_SETFL, O_NONBLOCK);&#x2F;&#x2F;将cfd更改为非阻塞</span><br><span class="line">            char dst[64];</span><br><span class="line">            int src &#x3D; cli_addr.sin_addr.s_addr;</span><br><span class="line">            inet_ntop(AF_INET, (void*)&amp;src, dst, sizeof(dst));</span><br><span class="line"></span><br><span class="line">            printf(&quot;客户端连接成功：客户端IP &#x3D; %s, PORT &#x3D; %d\n&quot;, dst, ntohs(cli_addr.sin_port));</span><br><span class="line">            FD_SET(cfd, &amp;aset);</span><br><span class="line">            if (cfd &gt; maxfd) &#123;</span><br><span class="line">                maxfd &#x3D; cfd;</span><br><span class="line">            &#125;</span><br><span class="line">            if (--count &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i &#x3D; lfd + 1; i &lt; maxfd + 1; i++) &#123;</span><br><span class="line">            if (FD_ISSET(i, &amp;rset)) &#123;</span><br><span class="line">                int rr &#x3D; read(i, buf, 1024);</span><br><span class="line">                if (rr &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                    &#x2F;&#x2F;当客户端关闭时，会在文件描述符中打印一个结束标志，当read读到这个标志时会返回0，而结束标志一直读不出来一直触发select</span><br><span class="line">                    FD_CLR(i, &amp;aset);</span><br><span class="line">                    close(i);</span><br><span class="line">                    printf(&quot;客户端断开连接\n&quot;);</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;</span><br><span class="line">                write(STDOUT_FILENO, buf, rr);</span><br><span class="line">                write(i, buf, rr);</span><br><span class="line">                if (--count &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+## poll
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;pool.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">poll</span><span class="params">(struct pollfd *fds, <span class="keyword">nfds_t</span> nfds, <span class="keyword">int</span> timeout)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>返回值：失败返回-1</p>
+</li>
+<li><p>struct pollfd *fds：指针加复数一定是数组</p>
+<ul>
+<li><pre><code class="c">  struct pollfd &#123;
+      int   fd;/* file descriptor */
+      short events;/* requested events */
+      short revents;/* returned events */
+  &#125;;
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	* int fd：打开的文件描述符，小于0时events被忽略，revents返回0</span><br><span class="line"></span><br><span class="line">	* short events：输入参数</span><br><span class="line"></span><br><span class="line">	* short revents：输出参数，触发的事件</span><br><span class="line"></span><br><span class="line">* nfds_t nfds：使用到的最后一个数组元素的下标+1</span><br><span class="line"></span><br><span class="line">* int timeout：单位是毫秒，-1表示阻塞，0表示非阻塞，&gt;0表示超时时长</span><br><span class="line"></span><br><span class="line">* 与select相比突破了1024的上限</span><br><span class="line"></span><br><span class="line">## epoll</span><br><span class="line"></span><br><span class="line">man epoll_create</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;c</span><br><span class="line">#include &lt;sys&#x2F;epoll.h&gt;</span><br><span class="line"></span><br><span class="line">int epoll_create(int size);</span><br><span class="line">int  epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);&#x2F;&#x2F;控制红黑树</span><br><span class="line">int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);&#x2F;&#x2F;类似select,poll</span><br></pre></td></tr></table></figure>
+int epoll_create(int size)</code></pre>
+</li>
+</ul>
+</li>
+<li><p>创建epoll实例（红黑树、双向链表位于内核区）</p>
+</li>
+<li><p>返回值：epfd</p>
+</li>
+</ul>
+<p>int  epoll_ctl</p>
+<ul>
+<li><p>控制红黑树和双向链表</p>
+</li>
+<li><p>callback函数（通知）代替轮询</p>
+<ul>
+<li>callback函数将事件拷贝到双向链表中</li>
+</ul>
+</li>
+</ul>
+<p>int epoll_wait</p>
+<ul>
+<li>读取双向链表</li>
+<li>将节点从双向链表中摘下存入events数组中</li>
+<li>返回值：触发事件的数量</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>解决了每次用户区和内核区的大量数据交换</li>
+</ul>
 
   
   
@@ -663,7 +838,7 @@
               
             
               
-                <p>本文永久链接是：<a href=http://example.com/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/>http://example.com/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</a></p>
+                <p>本文永久链接是：<a href=http://example.com/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/>http://example.com/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</a></p>
               
             
           </blockquote>
@@ -680,10 +855,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-04T11:57:09+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-06T21:09:49+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月4日</p>
+    <p>更新于：2021年3月6日</p>
   </a>
 </div>
 
@@ -691,6 +866,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
+
 
         
       
@@ -702,7 +880,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title= - Wwwhw's BLOG&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title=Linux网络编程 - Wwwhw's BLOG&summary="
           
           >
           
@@ -714,7 +892,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title= - Wwwhw's BLOG&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title=Linux网络编程 - Wwwhw's BLOG&summary="
           
           >
           
@@ -726,7 +904,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title= - Wwwhw's BLOG&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/&title=Linux网络编程 - Wwwhw's BLOG&summary="
           
           >
           
@@ -755,6 +933,35 @@
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2021/03/04/%E6%96%97%E5%9C%B0%E4%B8%BB/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i></p>
+          <p class='content'>数据库
+用户名
+
+密码
+
+总局数
+
+胜利局数
+
+头像代号
+
+
+玩家类
+用户名
+密码
+总局数
+获胜局数
+头像
+当前游戏编号
+当前身份（农民，地主）
+手牌
+
+登录功能卡组
+卡组转换成字符串
+卡组排序...</p>
+        </a>
       
       
         <a class='next' href='/2021/01/27/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/'>
@@ -803,7 +1010,7 @@ gccC/C++编译器，将C/C+...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv4"><span class="toc-text">ipv4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac%E5%9C%B0%E5%9D%80"><span class="toc-text">mac地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">IP地址的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E7%B1%BB%E5%9C%B0%E5%9D%80"><span class="toc-text">A类地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A9%E7%94%A8%E5%AD%90%E7%BD%91%E6%95%B0"><span class="toc-text">1.利用子网数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%A9%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%95%B0"><span class="toc-text">2.利用主机数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%A5%97%E6%8E%A5%E5%AD%97%E6%A6%82%E5%BF%B5"><span class="toc-text">1.套接字概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BD%91%E7%BB%9C%E5%A5%97%E6%8E%A5%E5%AD%97%E5%87%BD%E6%95%B0"><span class="toc-text">3.网络套接字函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-text">socket()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-text">bind()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#accept"><span class="toc-text">accept</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inet-pton-ntop"><span class="toc-text">inet_pton&#x2F;ntop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#connect"><span class="toc-text">connect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E5%B0%81%E8%A3%85"><span class="toc-text">数据包封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">以太网帧格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E6%AE%B5%E6%A0%BC%E5%BC%8F"><span class="toc-text">TCP段格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%8D%8F%E8%AE%AE"><span class="toc-text">TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E9%80%9A%E4%BF%A1%E6%97%B6%E5%BA%8F"><span class="toc-text">TCP通信时序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-text">四次挥手</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-text">流量控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">滑动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2"><span class="toc-text">状态转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-text">拥塞控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%85%A2%E5%90%AF%E5%8A%A8"><span class="toc-text">慢启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D"><span class="toc-text">拥塞避免</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%87%8D%E4%BC%A0-amp-%E5%BF%AB%E6%81%A2%E5%A4%8D"><span class="toc-text">快重传&amp;快恢复</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ipv4"><span class="toc-text">ipv4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac%E5%9C%B0%E5%9D%80"><span class="toc-text">mac地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-text">IP地址的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A%E7%B1%BB%E5%9C%B0%E5%9D%80"><span class="toc-text">A类地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%A9%E7%94%A8%E5%AD%90%E7%BD%91%E6%95%B0"><span class="toc-text">1.利用子网数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%A9%E7%94%A8%E4%B8%BB%E6%9C%BA%E6%95%B0"><span class="toc-text">2.利用主机数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%A5%97%E6%8E%A5%E5%AD%97%E6%A6%82%E5%BF%B5"><span class="toc-text">1.套接字概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BD%91%E7%BB%9C%E5%A5%97%E6%8E%A5%E5%AD%97%E5%87%BD%E6%95%B0"><span class="toc-text">3.网络套接字函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#socket"><span class="toc-text">socket()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-text">bind()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#accept"><span class="toc-text">accept</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inet-pton-ntop"><span class="toc-text">inet_pton&#x2F;ntop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#connect"><span class="toc-text">connect</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E5%B0%81%E8%A3%85"><span class="toc-text">数据包封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">以太网帧格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E6%AE%B5%E6%A0%BC%E5%BC%8F"><span class="toc-text">TCP段格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP%E5%8D%8F%E8%AE%AE"><span class="toc-text">TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E9%80%9A%E4%BF%A1%E6%97%B6%E5%BA%8F"><span class="toc-text">TCP通信时序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-text">四次挥手</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-text">流量控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3"><span class="toc-text">滑动窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2"><span class="toc-text">状态转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-text">拥塞控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%85%A2%E5%90%AF%E5%8A%A8"><span class="toc-text">慢启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D"><span class="toc-text">拥塞避免</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%87%8D%E4%BC%A0-amp-%E5%BF%AB%E6%81%A2%E5%A4%8D"><span class="toc-text">快重传&amp;快恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fcntl"><span class="toc-text">fcntl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#select"><span class="toc-text">select</span></a></li></ol>
     </div>
   </section>
 
@@ -819,8 +1026,8 @@ gccC/C++编译器，将C/C+...</p>
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Linux网络编程";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

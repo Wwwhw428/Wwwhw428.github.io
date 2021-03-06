@@ -642,6 +642,14 @@
 </blockquote>
 <h3 id="read函数"><a href="#read函数" class="headerlink" title="read函数"></a>read函数</h3><p>从文件描述符中读取count个字节，并存入buf。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>; </span><br></pre></td></tr></table></figure>
+<ul>
+<li>返回值：成功返回读取的字节数，失败返回-1并设置errno<ul>
+<li>EAGAIN：文件描述符被设置了O_NONBLOCK非阻塞</li>
+<li>EWOULDBLOCK：如果文件描述符被设置为非阻塞，当返回-1时</li>
+<li>返回值为-1并且errno为EAGAIN或EWORLDBLOCK时表示当前套接字被设置成了非阻塞并且当前文件描述符中没有数据</li>
+</ul>
+</li>
+</ul>
 <p>一般参数为fd，100%是文件描述符。buf为缓冲区，count读取数据的数量，size_t为无符号int。</p>
 <p>成功返回读到的字节数可能会小于count但不算错误（可供读取的字节数本身就比count小，read被信号打断，管道被破坏（如果fd是管道）），读到EOF时结束，0表示未读入任何数据，已到达了文件尾部。 -1表示出错，错误代号存放在全局变量errno里。</p>
 <h3 id="write函数"><a href="#write函数" class="headerlink" title="write函数"></a>write函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>;</span><br></pre></td></tr></table></figure>
@@ -1241,10 +1249,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-01T16:04:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-06T10:20:30+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月1日</p>
+    <p>更新于：2021年3月6日</p>
   </a>
 </div>
 
@@ -1320,8 +1328,8 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/02/24/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i></p>
+        <a class='prev' href='/2021/02/19/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux网络编程</p>
           <p class='content'>IPeg：300Mb带宽指的是300兆bit，1Byte = 8 bit， 300Mb = 37.5MB
 在不同主机上的进程间的通信
 ipv4
