@@ -330,18 +330,18 @@
       <div class='list-h'>
         
           
-            <a href="/v4/getting-started/"
+            <a target="_blank" rel="noopener" href="https://wwwhw428.github.io/"
               
               
-              id="v4getting-started">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+              id="https:wwwhw428githubio">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>博客</p>
             </a>
           
-            <a href="/faqs/"
+            <a href="/categories/"
               
               
-              id="faqs">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+              id="categories">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>分类</p>
             </a>
           
             <a href="/examples/"
@@ -362,14 +362,14 @@
               
               
               id="archives">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>归档</p>
             </a>
           
             <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
               
               
               id="https:githubcomvolantis-xhexo-theme-volantis">
-              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>源码</p>
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>主题</p>
             </a>
           
         
@@ -1124,7 +1124,7 @@
 </li>
 <li><p>锁越简单越好</p>
 </li>
-<li><p>资源还是共享的，线程间也还是竞争的，通过锁将资源的访问编程互斥操作。</p>
+<li><p>资源还是共享的，线程间也还是竞争的，通过锁将资源的访问变成互斥操作。</p>
 </li>
 </ul>
 <h4 id="pthread-mutex-init"><a href="#pthread-mutex-init" class="headerlink" title="pthread_mutex_init"></a>pthread_mutex_init</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pthread_mutex_init</span><span class="params">(<span class="keyword">pthread_mutex_t</span> *<span class="keyword">restrict</span> mutex,<span class="keyword">const</span> <span class="keyword">pthread_mutexattr_t</span> *<span class="keyword">restrict</span> attr)</span></span>;</span><br><span class="line"><span class="keyword">pthread_mutex_t</span> mutex = PTHREAD_MUTEX_INITIALIZER;</span><br></pre></td></tr></table></figure>
@@ -1142,7 +1142,7 @@
 <h3 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h3><ul>
 <li>读共享，写独占</li>
 <li>写锁优先级高于读锁</li>
-<li>写模式加锁时，解锁前所有对该锁枷锁的线程都会被阻塞</li>
+<li>写模式加锁时，解锁前所有对该锁加锁的线程都会被阻塞</li>
 <li>读模式加锁时，如果线程以读模式对其加锁会成功，如果线程以写模式加锁会阻塞</li>
 <li>适用于数据结构读的次数远大于写的次数</li>
 <li>情景：<ul>
@@ -1249,10 +1249,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-06T10:20:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-07T19:25:35+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月6日</p>
+    <p>更新于：2021年3月7日</p>
   </a>
 </div>
 
