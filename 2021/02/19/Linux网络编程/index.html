@@ -798,16 +798,45 @@ int epoll_create(int size)</code></pre>
 </li>
 <li><p>创建epoll实例（红黑树、双向链表位于内核区）</p>
 </li>
-<li><p>返回值：epfd</p>
+<li><p>返回值：成功返回epfd（epoll实例文件描述符），失败返回-1并设置errno</p>
+</li>
+<li><p>int size：建议值，epoll实例大小</p>
 </li>
 </ul>
 <p>int  epoll_ctl</p>
 <ul>
-<li><p>控制红黑树和双向链表</p>
+<li><p>控制红黑树</p>
 </li>
 <li><p>callback函数（通知）代替轮询</p>
 <ul>
 <li>callback函数将事件拷贝到双向链表中</li>
+</ul>
+</li>
+<li><p>返回值：</p>
+</li>
+<li><p>int op：操作，添加节点、摘节点</p>
+<ul>
+<li>EPOLL_CTL_ADD：添加</li>
+<li>EPOLL_CTL_MOD：修改</li>
+<li>EPOLL_CTL_DEL：删除</li>
+</ul>
+</li>
+<li><p>int fd：要操作的文件描述符</p>
+</li>
+<li><p>struct epoll_event *event：</p>
+<ul>
+<li><pre><code class="c">  typedef union epoll_data &#123;//联合体=&gt;四选一
+      void *ptr;
+      int fd;//
+      uint32_t u32;
+      uint64_t u64;
+  &#125; epoll_data_t;
+
+  struct epoll_event &#123;
+      uint32_t events;/* Epoll events */
+      epoll_data_t data;/* User data variable */
+  &#125;;</code></pre>
+</li>
 </ul>
 </li>
 </ul>
@@ -816,6 +845,8 @@ int epoll_create(int size)</code></pre>
 <li>读取双向链表</li>
 <li>将节点从双向链表中摘下存入events数组中</li>
 <li>返回值：触发事件的数量</li>
+<li>struct epoll_event *events：结构体数组</li>
+<li>int maxevents：events数组长度</li>
 </ul>
 <p>优点：</p>
 <ul>
@@ -855,10 +886,10 @@ int epoll_create(int size)</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-06T21:09:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-07T14:07:44+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月6日</p>
+    <p>更新于：2021年3月7日</p>
   </a>
 </div>
 
@@ -933,35 +964,6 @@ int epoll_create(int size)</code></pre>
 
   
     <div class="prev-next">
-      
-        <a class='prev' href='/2021/03/04/%E6%96%97%E5%9C%B0%E4%B8%BB/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i></p>
-          <p class='content'>数据库
-用户名
-
-密码
-
-总局数
-
-胜利局数
-
-头像代号
-
-
-玩家类
-用户名
-密码
-总局数
-获胜局数
-头像
-当前游戏编号
-当前身份（农民，地主）
-手牌
-
-登录功能卡组
-卡组转换成字符串
-卡组排序...</p>
-        </a>
       
       
         <a class='next' href='/2021/01/27/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/'>
